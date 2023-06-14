@@ -2,26 +2,88 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <style>
-        .contents{
-            padding-top: 10%;
-            background-color: #BDCBDA;
-            height: 100%;
-        }
-
-        .logo{
-            width: 30%;
-            height: 30%;
-        }
-    </style>
+    <link href="../css/common.css" rel="stylesheet" />
     <title>한국폐암환우회</title>
 </head>
 <body>
-<img src="images/logo.png" class="logo">
-<div class="contents">
+
+<nav>
+    <div class="liLogo"><a href="#"><img src="images/logo.png" class="imgLogo"></a></div>
+    <ul class="nav-links">
+        <li><a href="#">소개</a> </li>
+        <li><a href="#">사업 안내</a> </li>
+        <li><a href="#">후원</a> </li>
+        <li><a href="#">암 치료정보</a> </li>
+        <li><a href="#">소식</a> </li>
+    </ul>
+    <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line"></div>
+    </div>
+</nav>
+<script src="app.js">
+
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    const navlinks=document.querySelectorAll(".nav-links li");
+
+    const navAnimation = () => {
+        navlinks.forEach((link,index) => {
+            // 애니메이션 있을 때
+            if(link.style.animation){
+                // 애니메이션 비움
+                link.style.animation="";
+            }else{
+                // 애니메이션 없을 때 애니메이션을 추가
+                // 딜레이 간격을 줘서 li가 하나씩 차례대로 나타나도록 설정
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index/7+0.5}`;
+            }
+        });
+    };
+
+    const handleNav=()=>{
+        nav.classList.toggle("nav-active");
+
+        //nav Animation
+        navAnimation();
+
+        //burger Animation
+        burger.classList.toggle("toggle");
+    };
+    const navSide = () => {
+        burger.addEventListener("click",handleNav);
+    };
+
+
+
+    const setNavTransition =(width) => {
+        if(width>768){
+            nav.style.transition="";
+        }else{
+            nav.style.transition = "transform 0.5s eash-in";
+        }
+    };
+
+    const handleResize = () => {
+        const width=event.target.innerWidth;
+        setNavTransition(width);
+    };
+
+    const init = () =>{
+        window.addEventListener("resize",handleResize);
+        navSlide();
+    };
+
+    init();
+</script>
+
+<div class="main_content">
 
 
 </div>
-
+<footer>
+    <div> 비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포뉴시티) | Tel : 010-4467-8275 </div>
+</footer>
 </body>
 </html>
