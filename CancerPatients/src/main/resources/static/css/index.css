@@ -1,0 +1,50 @@
+.image_content{
+
+    background-color: ghostwhite;
+    text-align: center;
+    padding-top: 10%;
+    width:100%;
+    height:50%;
+
+}
+
+.noti{
+    font-size: 150%;
+    padding-left: 5%;
+    padding-top: 2%;
+}
+
+.bottom_outer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 30%;
+
+}
+
+.bottom_info{
+    width:25%;
+    height:100%;
+    text-align: center;
+    bottom: 0;
+
+}
+
+.outer{
+    justify-content: center;
+    text-align: center;
+    height: 30%;
+
+}
+
+.bottom_logo{
+    margin-top: 20%;
+    width:20%;
+    height:85%;
+}
+
+.keyword{
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
