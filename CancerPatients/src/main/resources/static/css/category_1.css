@@ -1,0 +1,52 @@
+.content_outer{
+    display: flex; align-items: center; justify-content: center;
+}
+
+.content{
+    width: 90%;
+    background-color: #E0E0E0;
+    font-size:large;
+    line-height: 170%;
+    padding: 2%;
+
+
+
+}
+
+/*.information_photo {*/
+/*    margin-top: 3%;*/
+/*    width: 45%;*/
+/*    !*background-color: #333333;*!*/
+/*    float: left;*/
+/*    padding:1%;*/
+/*    height: 90%;*/
+/*    display: flex; align-items: center; justify-content: center;*/
+/*}*/
+
+/*.information_text{*/
+/*    margin-top:3%;*/
+/*    padding: 1%;*/
+/*    font-size: x-large;*/
+/*    width:50%;*/
+/*    display: flex; align-items: center; justify-content: center;*/
+/*    line-height:150%;*/
+/*}*/
+
+.text_right{
+    text-align:right;
+    font-size: xx-large;
+    line-height:140%;
+}
+
+.text_center{
+    text-align:center;
+    font-size:x-large;
+}
+
+.people_img{
+    height: 40%;
+    width: 40%;
+    float:left;
+    margin-right:2%;
+    margin-bottom: 1%;
+}

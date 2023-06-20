@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../css/common.css" rel="stylesheet" />
+  <link href="../css/no_index.css" rel="stylesheet" />
+  <title>한국 폐암환우회</title>
+</head>
+<body>
+
+<nav>
+  <div class="liLogo"><a href="/"><img src="images/logo.png" class="imgLogo"></a></div>
+  <ul class="navbar-nav">
+    <li class="dropdown"><a href="#" class="dropdown-toggle">소개</a>
+      <ul class="dropdown-menu">
+        <li><a href="/organization">폐암환우회</a></li>
+        <li><a href="/greeting">인사말</a></li>
+        <li><a href="/trace">발자취</a></li>
+        <li><a href="/tree">조직도</a></li>
+      </ul>
+    </li>
+    <li class="dropdown"><a href="#" class="dropdown-toggle">사업 안내</a>
+      <ul class="dropdown-menu">
+        <li><a href="/breath_program">새숨 프로그램</a></li>
+        <li><a href="/breath_walk">새숨 걷기</a></li>
+        <li><a href="/breath_call">새숨 전화 상담</a></li>
+        <li><a href="/breath_flower">새봄 맞이 꽃씨 보내기</a></li>
+        <li><a href="/youtube">유튜브</a></li>
+        <li><a href="/hospital">환우 방문 및 병원 동행</a></li>
+        <li><a href="/activity">대외 활동</a></li>
+      </ul>
+    </li>
+    <li class="dropdown"><a href="#" class="dropdown-toggle">후원</a>
+      <ul class="dropdown-menu">
+        <li><a href="/donation">후원 신청</a></li>
+        <li><a href="/manage">후원금 운영</a></li>
+      </ul>
+    </li>
+    <li class="dropdown"><a href="#" class="dropdown-toggle">암 치료정보</a>
+      <ul class="dropdown-menu">
+        <li><a href="/lung">폐암이란</a></li>
+        <li><a href="/medicine">약 종류</a></li>
+        <li><a href="/diet">식단</a></li>
+      </ul>
+    </li>
+    <li class="dropdown"><a href="#" class="dropdown-toggle">소식</a>
+      <ul class="dropdown-menu">
+        <li><a href="/notification">공지사항</a></li>
+        <li><a href="/gallery">갤러리</a></li>
+        <li><a href="/news">복지뉴스</a></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="burger">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line"></div>
+  </div>
+</nav>
+<script src="app.js">
+
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".nav-links");
+  const navlinks=document.querySelectorAll(".nav-links li");
+
+  const navAnimation = () => {
+    navlinks.forEach((link,index) => {
+      // 애니메이션 있을 때
+      if(link.style.animation){
+        // 애니메이션 비움
+        link.style.animation="";
+      }else{
+        // 애니메이션 없을 때 애니메이션을 추가
+        // 딜레이 간격을 줘서 li가 하나씩 차례대로 나타나도록 설정
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index/7+0.5}`;
+      }
+    });
+  };
+
+  const handleNav=()=>{
+    nav.classList.toggle("nav-active");
+
+    //nav Animation
+    navAnimation();
+
+    //burger Animation
+    burger.classList.toggle("toggle");
+  };
+  const navSlide = () => {
+    burger.addEventListener("click",handleNav);
+  };
+
+
+
+  const setNavTransition =(width) => {
+    if(width>768){
+      nav.style.transition="";
+    }else{
+      nav.style.transition = "transform 0.5s eash-in";
+    }
+  };
+
+  const handleResize = () => {
+    const width=event.target.innerWidth;
+    setNavTransition(width);
+  };
+
+  const init = () =>{
+    window.addEventListener("resize",handleResize);
+    navSlide();
+  };
+
+  init();
+</script>
+
+<div class="main_content">
+  <div class="sub_header">
+    <article class="sub_category">
+      <div class="sub_menu">
+        <a href="/organization"><span class="sub_menu_text">폐암환우회</span></a>
+      </div>
+      <div class="sub_menu">
+        <a href="/greeting"><span class="sub_menu_text">인사말</span></a>
+      </div>
+      <div class="sub_menu">
+        <a href="/trace"><span class="sub_menu_text">발자취</span></a>
+      </div>
+      <div class="sub_menu">
+        <a href="/tree"><span class="sub_menu_text">조직도</span></a>
+      </div>
+    </article>
+  </div>
+</div>
+<footer>
+  <div> 비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포뉴시티) | Tel : 010-4467-8275 </div>
+</footer>
+</body>
+</html>
