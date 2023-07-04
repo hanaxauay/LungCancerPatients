@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 
 @Table(name="DONATION")
@@ -22,7 +23,7 @@ public class DonationDto {
 
     private String author;
 
-    private LocalDat
+    //private LocalDateTime
     private int views;
 
 
