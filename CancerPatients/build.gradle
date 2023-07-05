@@ -28,6 +28,9 @@ dependencies {
 
 	// jpa
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	//thymeleaf
+	implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
 }
 
 tasks.named('test') {

@@ -134,7 +134,34 @@
     </div>
     <div class="content_outer">
         <div class="content">
-            후원금운영
+            <th:block th:replace="~{layout/basic  :: setContent(~{this::content})}">
+                <th:block th:fragment="content">
+
+                    <h1>Donaion Manage List Page</h1>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Gno</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Regdate</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">[[${dto.seq}]]</th>
+                            <td>[[${dto.title}]]</td>
+                            <td>[[${dto.author}]]</td>
+                            <td>[[${dto.write_time}]]</td>
+                            <td>[[${dto.views}]]</td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </th:block>
+
+            </th:block>
 
 
         </div>
