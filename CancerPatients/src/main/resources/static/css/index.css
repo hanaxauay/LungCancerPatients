@@ -1,8 +1,7 @@
 .image_content{
 
-    background-color: ghostwhite;
+    background-color: #EFEFEF;
     text-align: center;
-    padding-top: 10%;
     width:100%;
     height:50%;
 
@@ -39,12 +38,17 @@
 
 .bottom_logo{
     margin-top: 20%;
-    width:20%;
-    height:85%;
+    width:18%;
+    height:100%;
 }
 
 .keyword{
     font-size: 120%;
     font-weight: bold;
     margin-bottom: 2%;
+}
+
+.index_img{
+    width:80%;
+    height:80%;
 }

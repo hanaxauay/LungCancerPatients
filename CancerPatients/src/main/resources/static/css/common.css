@@ -157,6 +157,16 @@ html,body{
     height:100%;
 }
 
+#wrap {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+footer {
+    bottom: 0;
+}
+
 
 .sub_header{
     width: 100%;
@@ -164,14 +174,18 @@ html,body{
     justify-content: center;
 }
 
-.main_content{
-    height: 100%;
-}
+/*.main_content{*/
+/*    height: 100%;*/
+/*}*/
 
 
 
 
 footer{
+    position: relative; (absolute -> relative)
+    transform: translatY(-100%);
+    /*위에 두개 없애도 되면 없애자*/
+
     background-color: #626262;
     width: 100%;
     height: 10%;
