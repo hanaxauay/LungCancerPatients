@@ -1,6 +1,6 @@
 package com.example.cancerpatients.controller;
 
-import com.example.cancerpatients.dto.DonationDto;
+import com.example.cancerpatients.entity.Donation;
 import com.example.cancerpatients.service.DonationService;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
@@ -16,36 +16,25 @@ import java.util.List;
 @Slf4j
 public class HomeController {
 
-    @Autowired
-    private DonationService donationService;
 
-    public Logger logger = LoggerFactory.getLogger(Controller.class);
     @GetMapping("/")
     public String home(){
-        return "index.html";
+        return "index";
     }
 
     @GetMapping("/organization")
     public String goOrganization(){
-        return "organization.html";
+        return "organization";
     }
     @GetMapping("/greeting")
     public String goGreeting(){
-        return "greeting.html";
+        return "greeting";
     }
 
-    @GetMapping("/donation_manage")
-    public String godonation_manage(Model model){
-        // 모든 후원금 내역 조회
-        List<DonationDto> donations = donationService.selectAll();
 
-        // 조회된 엔티티들을 모델에 담아서 뷰로 전달
-        model.addAttribute("donations",donations);
-        return "donation_manage.html";
-    }
     @GetMapping("/tree")
     public String gotree(){
-        return "tree.html";
+        return "tree";
     }
 
 //    @GetMapping("/dbTest")

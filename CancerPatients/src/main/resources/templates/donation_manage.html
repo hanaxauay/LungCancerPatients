@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
 <body>
 
 <nav>
-    <div class="liLogo"><a href="/"><img src="images/logo.png" class="imgLogo"></a></div>
+    <div class="liLogo"><a href="/static"><img src="../static/images/logo.png" class="imgLogo"></a></div>
     <ul class="navbar-nav">
         <li class="dropdown"><a href="#" class="dropdown-toggle">소개</a>
             <ul class="dropdown-menu">
@@ -59,61 +59,60 @@
         <div class="line"></div>
     </div>
 </nav>
-<script src="app.js">
+<!--<script src="app.js"></script>-->
 
-    const burger = document.querySelector(".burger");
-    const nav = document.querySelector(".nav-links");
-    const navlinks=document.querySelectorAll(".nav-links li");
-
-    const navAnimation = () => {
-        navlinks.forEach((link,index) => {
-            // 애니메이션 있을 때
-            if(link.style.animation){
-                // 애니메이션 비움
-                link.style.animation="";
-            }else{
-                // 애니메이션 없을 때 애니메이션을 추가
-                // 딜레이 간격을 줘서 li가 하나씩 차례대로 나타나도록 설정
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index/7+0.5}`;
-            }
-        });
-    };
-
-    const handleNav=()=>{
-        nav.classList.toggle("nav-active");
-
-        //nav Animation
-        navAnimation();
-
-        //burger Animation
-        burger.classList.toggle("toggle");
-    };
-    const navSlide = () => {
-        burger.addEventListener("click",handleNav);
-    };
-
-
-
-    const setNavTransition =(width) => {
-        if(width>768){
-            nav.style.transition="";
-        }else{
-            nav.style.transition = "transform 0.5s eash-in";
-        }
-    };
-
-    const handleResize = () => {
-        const width=event.target.innerWidth;
-        setNavTransition(width);
-    };
-
-    const init = () =>{
-        window.addEventListener("resize",handleResize);
-        navSlide();
-    };
-
-    init();
-</script>
+<!--//    const burger = document.querySelector(".burger");-->
+<!--//    const nav = document.querySelector(".nav-links");-->
+<!--//    const navlinks=document.querySelectorAll(".nav-links li");-->
+<!--//-->
+<!--//    const navAnimation = () => {-->
+<!--//        navlinks.forEach((link,index) => {-->
+<!--//            // 애니메이션 있을 때-->
+<!--//            if(link.style.animation){-->
+<!--//                // 애니메이션 비움-->
+<!--//                link.style.animation="";-->
+<!--//            }else{-->
+<!--//                // 애니메이션 없을 때 애니메이션을 추가-->
+<!--//                // 딜레이 간격을 줘서 li가 하나씩 차례대로 나타나도록 설정-->
+<!--//                link.style.animation = `navLinkFade 0.5s ease forwards ${index/7+0.5}`;-->
+<!--//            }-->
+<!--//        });-->
+<!--//    };-->
+<!--//-->
+<!--//    const handleNav=()=>{-->
+<!--//        nav.classList.toggle("nav-active");-->
+<!--//-->
+<!--//        //nav Animation-->
+<!--//        navAnimation();-->
+<!--//-->
+<!--//        //burger Animation-->
+<!--//        burger.classList.toggle("toggle");-->
+<!--//    };-->
+<!--//    const navSlide = () => {-->
+<!--//        burger.addEventListener("click",handleNav);-->
+<!--//    };-->
+<!--//-->
+<!--//-->
+<!--//-->
+<!--//    const setNavTransition =(width) => {-->
+<!--//        if(width>768){-->
+<!--//            nav.style.transition="";-->
+<!--//        }else{-->
+<!--//            nav.style.transition = "transform 0.5s eash-in";-->
+<!--//        }-->
+<!--//    };-->
+<!--//-->
+<!--//    const handleResize = () => {-->
+<!--//        const width=event.target.innerWidth;-->
+<!--//        setNavTransition(width);-->
+<!--//    };-->
+<!--//-->
+<!--//    const init = () =>{-->
+<!--//        window.addEventListener("resize",handleResize);-->
+<!--//        navSlide();-->
+<!--//    };-->
+<!--//-->
+<!--//    init();-->
 <div class="main_content">
     <div class="sub_header">
         <div class="sub_category">
@@ -134,34 +133,24 @@
     </div>
     <div class="content_outer">
         <div class="content">
-            <th:block th:replace="~{layout/basic  :: setContent(~{this::content})}">
-                <th:block th:fragment="content">
 
-                    <h1>Donaion Manage List Page</h1>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Gno</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Regdate</th>
+            <table>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Write Time</th>
+                </tr>
+                <tr th:each="donation : ${donationList}">
+                    <td th:text="${donation.seq}"></td>
+                    <td th:text="${donation.title}"></td>
+                    <td th:text="${donation.author}"></td>
+                    <td th:text="${donation.write_time}"></td>
+                </tr>
+            </table>
 
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">[[${dto.seq}]]</th>
-                            <td>[[${dto.title}]]</td>
-                            <td>[[${dto.author}]]</td>
-                            <td>[[${dto.write_time}]]</td>
-                            <td>[[${dto.views}]]</td>
-                        </tr>
-                        </tbody>
 
-                    </table>
-                </th:block>
 
-            </th:block>
 
 
         </div>

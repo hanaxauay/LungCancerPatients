@@ -19,7 +19,7 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
 	implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.0.1'
 
-	implementation 'org.projectlombok:lombok:'
+	implementation 'org.projectlombok:lombok:1.18.20'
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.32'
 
@@ -30,7 +30,14 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
 	//thymeleaf
-	implementation group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+
+	implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect'
+
+
+	annotationProcessor('org.projectlombok:lombok')
+	testAnnotationProcessor('org.projectlombok:lombok')
+
 }
 
 tasks.named('test') {
