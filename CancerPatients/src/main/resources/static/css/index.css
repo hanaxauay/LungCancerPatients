@@ -1,18 +1,46 @@
 .image_content{
-
     background-color: #EFEFEF;
     text-align: center;
     width:100%;
     height:50%;
+}
 
+.parent{
+    padding:2%;
+    height: 50vh;
 }
 
 .noti{
     font-size: 150%;
-    padding-left: 5%;
-    padding-top: 2%;
+    padding-bottom: 1%;
+}
+.first {
+    background-color: white;
+    color:#626262;
+    float: left;
+    width:30%;
+    height:80%;
+    box-sizing: border-box;
 }
 
+.second{
+    background-color: white;
+    color:#626262;
+    float: left;
+    margin-left: 5%;
+    width:30%;
+    height:80%;
+    box-sizing: border-box;
+}
+
+.third{
+    background-color: white;
+    color:#626262;
+    float: right;
+    width:30%;
+    height:80%;
+    box-sizing: border-box;
+}
 .bottom_outer{
     display: flex;
     justify-content: center;
@@ -50,5 +78,5 @@
 
 .index_img{
     width:80%;
-    height:80%;
+    height:50%;
 }
