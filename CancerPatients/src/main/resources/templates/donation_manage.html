@@ -3,62 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href="../resources/css/common.css" rel="stylesheet" />
     <link href="../resources/css/no_index.css" rel="stylesheet" />
     <title>한국 폐암환우회</title>
+
 </head>
 <body>
+
 <div id="wrap">
-    <nav>
-        <div class="liLogo"><a href="/"><img src="../resources/images/logo.png" class="imgLogo"></a></div>
-        <ul class="navbar-nav">
-            <li class="dropdown"><a href="#" class="dropdown-toggle">소개</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/organization">폐암환우회</a></li>
-                    <li><a href="/greeting">인사말</a></li>
-                    <li><a href="/trace">발자취</a></li>
-                    <li><a href="/tree">조직도</a></li>
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <div class="container-fluid">
+            <div class="liLogo"><a href="/"><img src="../resources/images/logo.png" class="imgLogo"></a></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">소개</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown03">
+
+                            <a class="dropdown-item" href="#">폐암환우회</a>
+                            <a class="dropdown-item" href="#">인사말</a>
+                            <a class="dropdown-item" href="#">발자취</a>
+                            <a class="dropdown-item" href="#">조직도</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">사업 안내</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">후원</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">암 치료정보</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">소식</a>
+                    </li>
                 </ul>
-            </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle">사업 안내</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/breath_program">새숨 프로그램</a></li>
-                    <li><a href="/breath_walk">새숨 걷기</a></li>
-                    <li><a href="/breath_call">새숨 전화 상담</a></li>
-                    <li><a href="/breath_flower">새봄 맞이 꽃씨 보내기</a></li>
-                    <li><a href="/youtube">유튜브</a></li>
-                    <li><a href="/hospital">환우 방문 및 병원 동행</a></li>
-                    <li><a href="/activity">대외 활동</a></li>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">관리자 로그인</a>
+                    </li>
                 </ul>
-            </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle">후원</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/donation">후원 신청</a></li>
-                    <li><a href="/donation_manage">후원금 운영</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle">암 치료정보</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/lung">폐암이란</a></li>
-                    <li><a href="/medicine">약 종류</a></li>
-                    <li><a href="/diet">식단</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle">소식</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/notification">공지사항</a></li>
-                    <li><a href="/gallery">갤러리</a></li>
-                    <li><a href="/news">복지뉴스</a></li>
-                </ul>
-            </li>
-        </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line"></div>
+            </div>
         </div>
     </nav>
-    <!--<script src="app.js"></script>-->
+        <!--<script src="app.js"></script>-->
 
     <!--//    const burger = document.querySelector(".burger");-->
     <!--//    const nav = document.querySelector(".nav-links");-->
@@ -112,6 +106,7 @@
     <!--//    };-->
     <!--//-->
     <!--//    init();-->
+    <br /><br /><br /><br /><br />
     <div class="main_content">
         <div class="sub_header">
             <div class="sub_category">
@@ -133,19 +128,24 @@
         <div class="content_outer">
             <div class="content">
 
-                <table>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">Write Time</th>
-                    </tr>
-                    <tr th:each="donation : ${donationList}">
-                        <td th:text="${donation.seq}"></td>
-                        <td th:text="${donation.title}"></td>
-                        <td th:text="${donation.author}"></td>
-                        <td th:text="${donation.write_time}"></td>
-                    </tr>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Write Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr th:each="donation : ${donationList}">
+                            <td th:text="${donation.seq}"></td>
+                            <td th:text="${donation.title}"></td>
+                            <td th:text="${donation.author}"></td>
+                            <td th:text="${donation.write_time}"></td>
+                        </tr>
+                    </tbody>
                 </table>
 
 
@@ -160,5 +160,7 @@
 <footer>
     비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포뉴시티) | Tel : 010-4467-8275
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
 </body>
 </html>
