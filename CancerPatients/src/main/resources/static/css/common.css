@@ -82,61 +82,48 @@ nav {
 }
 /**/
 
-.burger{
-    display: none;
-    cursor:pointer;
-}
+/*@media screen and (max-width: 1024px){*/
+/*    .navbar-nav{*/
+/*        width: 60%;*/
+/*    }*/
+/*}*/
+/*@media screen and(max-width: 768px){*/
+/*    body{*/
+/*        overflow-x:hidden;*/
+/*    }*/
+/*    .navbar-nav{*/
+/*        position: absolute;*/
+/*        top:8vh;*/
+/*        right:0;*/
+/*        height:92vh;*/
+/*        background-color: white;*/
+/*        flex-direction: column;*/
+/*        align-items: center;*/
+/*        width: 50%;*/
+/*        transform:translateX(100%);*/
+/*    }*/
+/*    .navbar-nav li{*/
+/*        opacity: 0;*/
+/*    }*/
+/*    .burger{*/
+/*        display: block;*/
+/*    }*/
+/*    .nav-active{*/
+/*        transform: translateX(0%);*/
+/*    }*/
 
-.burger div{
-    width:25px;
-    height:3px;
-    background-color: red;
-    margin:5px;
-    transition : all 0.3s ease;
-}
+/*    .toggle .line1{*/
+/*        transform:rotate(-45deg) translate(-5px,6px);*/
+/*    }*/
 
-@media screen and (max-width: 1024px){
-    .navbar-nav{
-        width: 60%;
-    }
-}
-@media screen and(max-width: 768px){
-    body{
-        overflow-x:hidden;
-    }
-    .navbar-nav{
-        position: absolute;
-        top:8vh;
-        right:0;
-        height:92vh;
-        background-color: white;
-        flex-direction: column;
-        align-items: center;
-        width: 50%;
-        transform:translateX(100%);
-    }
-    .navbar-nav li{
-        opacity: 0;
-    }
-    .burger{
-        display: block;
-    }
-    .nav-active{
-        transform: translateX(0%);
-    }
+/*    .toggle .line2{*/
+/*        opacity: 0;*/
+/*    }*/
 
-    .toggle .line1{
-        transform:rotate(-45deg) translate(-5px,6px);
-    }
-
-    .toggle .line2{
-        opacity: 0;
-    }
-
-    .toggle .line3{
-        transform:rotate(45deg) translate(-5px,-6px);
-    }
-}
+/*    .toggle .line3{*/
+/*        transform:rotate(45deg) translate(-5px,-6px);*/
+/*    }*/
+/*}*/
 
 .liLogo{
     width:15%;
@@ -163,11 +150,6 @@ html,body{
     padding-bottom: 60px;
 }
 
-footer {
-    bottom: 0;
-}
-
-
 .sub_header{
     width: 100%;
     background-color: #BDCBDA;
@@ -191,6 +173,7 @@ footer{
     height: 10%;
     color:#fff;
     display: flex; align-items: center; justify-content: center;
+    bottom: 0;
 }
 
 
