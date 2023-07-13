@@ -4,6 +4,10 @@
     box-sizing:border-box;
 }
 
+html,body{
+    height:100%;
+}
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -12,7 +16,6 @@ nav {
     vh: 브라우저 안쪽높이(window.innerHeight)을 기준으로 설정된다.
     하지만 태블릿이나 모바일의 경우에는 뷰포트에 따라 맞춰짐*/
     min-height: 8vh;
-
 }
 
 .navbar-nav{
@@ -39,10 +42,12 @@ nav {
 
 }
 
-.navbar-nav li a:hover{
-    color:white;
-    background: #D5D5D5;
+.navbar-nav .nav-link:hover {
+    color: #1976D2; /* 원하는 색상으로 변경 */
+}
 
+.dropdown-toggle::after {
+    display: none;
 }
 
 /*
@@ -50,11 +55,6 @@ nav {
  */
 .dropdown {
     position: relative;
-}
-
-.dropdown-toggle::after {
-    content: '\25BE'; /* 화살표 아이콘 */
-    margin-left: 5px;
 }
 
 .dropdown-menu {
@@ -80,54 +80,9 @@ nav {
 .dropdown-menu a:hover {
     background-color: #f2f2f2;
 }
-/**/
-
-/*@media screen and (max-width: 1024px){*/
-/*    .navbar-nav{*/
-/*        width: 60%;*/
-/*    }*/
-/*}*/
-/*@media screen and(max-width: 768px){*/
-/*    body{*/
-/*        overflow-x:hidden;*/
-/*    }*/
-/*    .navbar-nav{*/
-/*        position: absolute;*/
-/*        top:8vh;*/
-/*        right:0;*/
-/*        height:92vh;*/
-/*        background-color: white;*/
-/*        flex-direction: column;*/
-/*        align-items: center;*/
-/*        width: 50%;*/
-/*        transform:translateX(100%);*/
-/*    }*/
-/*    .navbar-nav li{*/
-/*        opacity: 0;*/
-/*    }*/
-/*    .burger{*/
-/*        display: block;*/
-/*    }*/
-/*    .nav-active{*/
-/*        transform: translateX(0%);*/
-/*    }*/
-
-/*    .toggle .line1{*/
-/*        transform:rotate(-45deg) translate(-5px,6px);*/
-/*    }*/
-
-/*    .toggle .line2{*/
-/*        opacity: 0;*/
-/*    }*/
-
-/*    .toggle .line3{*/
-/*        transform:rotate(45deg) translate(-5px,-6px);*/
-/*    }*/
-/*}*/
 
 .liLogo{
     width:15%;
-
 }
 
 .imgLogo {
@@ -135,13 +90,6 @@ nav {
     width: 100%;
     margin-left: 1%;
     vertical-align: middle;
-}
-
-
-
-
-html,body{
-    height:100%;
 }
 
 #wrap {
@@ -156,13 +104,6 @@ html,body{
     justify-content: center;
 }
 
-/*.main_content{*/
-/*    height: 100%;*/
-/*}*/
-
-
-
-
 footer{
     position: relative; (absolute -> relative)
     transform: translatY(-100%);
@@ -176,27 +117,14 @@ footer{
     bottom: 0;
 }
 
-
-/*no_index 부분*/
-
-/*
-지워도 되나?
-.navbar {*/
-/*    position: fixed;*/
-/*    top: 0;*/
-/*    width: 100%;*/
-/*}*/
 a{
     text-decoration: none;
     color:#404040;
 }
 
-
 li{
     list-style: none;
 }
-
-
 
 .sub_category {
     width: 100%;
