@@ -2,10 +2,19 @@
     margin:0px;
     padding:0px;
     box-sizing:border-box;
+
+    /*font-family: Arial, sans-serif;*/
+
 }
 
 html,body{
     height:100%;
+}
+
+#wrap {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 60px;
 }
 
 nav {
@@ -15,15 +24,20 @@ nav {
     /* 요소의 최소 너비 지정, height 속성 무시
     vh: 브라우저 안쪽높이(window.innerHeight)을 기준으로 설정된다.
     하지만 태블릿이나 모바일의 경우에는 뷰포트에 따라 맞춰짐*/
-    min-height: 8vh;
+    min-height: 10vh;
+    font-size: 1.485rem;
 }
 
 .navbar-nav{
-    width:40%;
+    width:100%;
     display: flex;
     justify-content: space-around;
-    /*추가 */
     list-style-type: none;
+
+}
+
+.navbar-item{
+    min-width: 10vh;
 
 }
 
@@ -46,10 +60,9 @@ nav {
     color: #1976D2; /* 원하는 색상으로 변경 */
 }
 
-.dropdown-toggle::after {
-    display: none;
+.navbar-nav li:not(:last-child) {
+    padding-right: 5rem;
 }
-
 /*
 드롭다운
  */
@@ -81,21 +94,23 @@ nav {
     background-color: #f2f2f2;
 }
 
-.liLogo{
-    width:15%;
+.dropdown-toggle::after {
+    display: none;
+}
+
+.logo-li{
+    width:25%;
+    margin:1%;
+    vertical-align: middle;
 }
 
 .imgLogo {
     height: 100%;
     width: 100%;
-    margin-left: 1%;
-    vertical-align: middle;
 }
 
-#wrap {
-    min-height: 100%;
-    position: relative;
-    padding-bottom: 60px;
+.main_content{
+    margin:2%;
 }
 
 .sub_header{
@@ -104,22 +119,10 @@ nav {
     justify-content: center;
 }
 
-footer{
-    position: relative; (absolute -> relative)
-    transform: translatY(-100%);
-    /*위에 두개 없애도 되면 없애자*/
-
-    background-color: #626262;
-    width: 100%;
-    height: 10%;
-    color:#fff;
-    display: flex; align-items: center; justify-content: center;
-    bottom: 0;
-}
 
 a{
     text-decoration: none;
-    color:#404040;
+    color:red;
 }
 
 li{
@@ -151,3 +154,16 @@ li{
 .sub_menu :hover{
     color: #000000;
 }
+
+footer{
+    position: relative; (absolute -> relative)
+    transform: translatY(-100%);
+    /*위에 두개 없애도 되면 없애자*/
+    background-color: #626262;
+    width: 100%;
+    height: 10%;
+    color:#fff;
+    display: flex; align-items: center; justify-content: center;
+    bottom: 0;
+}
+
