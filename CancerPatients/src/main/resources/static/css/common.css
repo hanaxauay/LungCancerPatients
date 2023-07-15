@@ -149,7 +149,7 @@ li{
 
 footer{
     position: relative; (absolute -> relative)
-    transform: translatY(-100%);
+transform: translatY(-100%);
     /*위에 두개 없애도 되면 없애자*/
     background-color: #626262;
     width: 100%;
