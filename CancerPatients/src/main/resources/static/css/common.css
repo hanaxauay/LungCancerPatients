@@ -2,19 +2,22 @@
     margin:0px;
     padding:0px;
     box-sizing:border-box;
-
-    /*font-family: Arial, sans-serif;*/
-
 }
 
 html,body{
     height:100%;
 }
 
+/*이거 안해도 차이가 없는데..?*/
 #wrap {
     min-height: 100%;
     position: relative;
     padding-bottom: 60px;
+}
+
+.content_outer{
+    margin-left: 2%;
+    margin-right:2%;
 }
 
 nav {
@@ -33,12 +36,19 @@ nav {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
-    overflow: hidden;
+    /*overflow: hidden;*/
     white-space: nowrap;
+
+
 }
 
 .navbar-nav li{
     list-style: none;
+}
+
+.navbar-nav a {
+    color:#626262;
+    text-decoration: none;
 }
 
 .navbar-nav li a{
@@ -51,9 +61,10 @@ nav {
     color: #1976D2; /* 원하는 색상으로 변경 */
 }
 
-.navbar-nav li:not(:last-child) {
-    padding-right: 1rem;
+.dropdown-toggle::after {
+    display: none;
 }
+
 /*
 드롭다운
  */
@@ -85,25 +96,15 @@ nav {
     background-color: #f2f2f2;
 }
 
-.dropdown-toggle::after {
-    display: none;
-}
-
-.logo-li{
-    width:30%;
+.liLogo{
+    width:15%;
     margin:1%;
     vertical-align: middle;
 }
 
 .imgLogo {
-    /*width: 300px;*/
-    /*height: 60px;*/
-    width: 70%;
-    height:50%;
-}
-
-.main_content{
-    margin:2%;
+    width: 300px;
+    height: 60px;
 }
 
 .sub_header{
@@ -112,9 +113,22 @@ nav {
     justify-content: center;
 }
 
+footer{
+    position: relative; (absolute -> relative)
+transform: translatY(-100%);
+    /*위에 두개 없애도 되면 없애자*/
+
+    background-color: #626262;
+    width: 100%;
+    height: 10%;
+    color:#fff;
+    display: flex; align-items: center; justify-content: center;
+    bottom: 0;
+}
+
 a{
     text-decoration: none;
-    color:red;
+    color:#404040;
 }
 
 li{
@@ -146,16 +160,3 @@ li{
 .sub_menu :hover{
     color: #000000;
 }
-
-footer{
-    position: relative; (absolute -> relative)
-transform: translatY(-100%);
-    /*위에 두개 없애도 되면 없애자*/
-    background-color: #626262;
-    width: 100%;
-    height: 10%;
-    color:#fff;
-    display: flex; align-items: center; justify-content: center;
-    bottom: 0;
-}
-
