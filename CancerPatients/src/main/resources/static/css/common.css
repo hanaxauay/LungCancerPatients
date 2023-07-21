@@ -153,7 +153,6 @@ li{
 /*세부 카테고리 텍스트 설정*/
 .sub_menu_text {
     text-align: center;
-    /*text-decoration-line: underline;*/
     color: #505050;
     font-size: 1.225rem;
 }
