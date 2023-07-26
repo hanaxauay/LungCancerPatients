@@ -3,55 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="../resources/css/common.css" rel="stylesheet" />
     <link href="../resources/css/index.css" rel="stylesheet" />
     <title>한국 폐암환우회</title>
 </head>
 <body>
 <div id="wrap">
-    <nav>
-        <div class="liLogo"><a href="/"><img src="../resources/images/logo.png" class="imgLogo"></a></div>
-        <ul class="navbar-nav">
-            <li class="dropdown"><a href="#" class="dropdown-toggle">소개</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/organization">폐암환우회</a></li>
-                    <li><a href="/greeting">인사말</a></li>
-                    <li><a href="/trace">발자취</a></li>
-                    <li><a href="/tree">조직도</a></li>
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+            <div class="logo-li"><a href="/"><img src="../resources/images/logo.png" class="imgLogo"></a></div>
+
+            <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">소개</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/organization">폐암환우회</a>
+                            <a class="dropdown-item" href="/greeting">인사말</a>
+                            <a class="dropdown-item" href="/trace">발자취</a>
+                            <a class="dropdown-item" href="/tree">조직도</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">사업 안내</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/breath_program">새숨 프로그램</a>
+                            <a class="dropdown-item" href="/breath_walk">새숨 걷기</a>
+                            <a class="dropdown-item" href="/breath_call">새숨 전화 상담</a>
+                            <a class="dropdown-item" href="/breath_flower">새봄 맞이 꽃씨 보내기</a>
+                            <a class="dropdown-item" href="/youtube">유튜브</a>
+                            <a class="dropdown-item" href="/hospital">환우 방문 및 병원 동행</a>
+                            <a class="dropdown-item" href="/activity">대외 활동</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">후원</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/donation">후원 신청</a>
+                            <a class="dropdown-item" href="/donation_manage">후원금 운영</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">암 치료정보</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/lung">폐암이란</a>
+                            <a class="dropdown-item" href="/medicine">약 종류</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">소식</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/notice">공지사항</a>
+                            <a class="dropdown-item" href="/gallery">갤러리</a>
+                            <a class="dropdown-item" href="/news">복지 뉴스</a>
+                        </div>
+                    </li>
+                    <!--                    <li class="nav-item ms-auto"> &lt;!&ndash; ms-auto 클래스로 변경 &ndash;&gt;-->
+                    <!--                        <a class="nav-link" href="#">관리자 로그인</a>-->
+                    <!--                    </li>-->
                 </ul>
-            </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle">사업 안내</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/breath_program">새숨 프로그램</a></li>
-                    <li><a href="/breath_walk">새숨 걷기</a></li>
-                    <li><a href="/breath_call">새숨 전화 상담</a></li>
-                    <li><a href="/breath_flower">새봄 맞이 꽃씨 보내기</a></li>
-                    <li><a href="/youtube">유튜브</a></li>
-                    <li><a href="/hospital">환우 방문 및 병원 동행</a></li>
-                    <li><a href="/activity">대외 활동</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle">후원</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/donation">후원 신청</a></li>
-                    <li><a href="/donation_manage">후원금 운영</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle">암 치료정보</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/lung">폐암이란</a></li>
-                    <li><a href="/medicine">약 종류</a></li>
-                    <li><a href="/diet">식단</a></li>
-                </ul>
-            </li>
-            <li class="dropdown"><a href="#" class="dropdown-toggle">소식</a>
-                <ul class="dropdown-menu">
-                    <li><a href="/notification">공지사항</a></li>
-                    <li><a href="/gallery">갤러리</a></li>
-                    <li><a href="/news">복지뉴스</a></li>
-                </ul>
-            </li>
-        </ul>
+            </div>
+        </div>
     </nav>
     <div class="middle">
         <div class="sub_header">
