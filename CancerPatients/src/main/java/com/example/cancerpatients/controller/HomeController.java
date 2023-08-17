@@ -32,6 +32,11 @@ public class HomeController {
     }
 
 
+    @GetMapping("/consult")
+    public String goConsult(){
+        return "consult";
+    }
+
     @GetMapping("/tree")
     public String gotree(){
         return "tree";
