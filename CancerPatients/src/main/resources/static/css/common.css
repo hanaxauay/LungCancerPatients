@@ -107,6 +107,21 @@ nav {
     height: 60px;
 }
 
+.tree_img {
+   text-align: center;
+}
+.tree__img {
+    width: 800px;
+}
+
+.trace_img {
+    text-align: center;
+}
+
+.trace__img {
+    width: 800px;
+
+}
 .sub_header{
     width: 100%;
     background-color: #BDCBDA;
