@@ -9,7 +9,7 @@ html,body{
 }
 
 /*이거 안해도 차이가 없는데..?*/
-#wrap {
+#all {
     min-height: 100%;
     position: relative;
     padding-bottom: 60px;
@@ -159,3 +159,4 @@ li{
 .sub_menu :hover{
     color: #000000;
 }
+

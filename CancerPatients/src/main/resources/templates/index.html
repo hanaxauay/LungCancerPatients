@@ -9,15 +9,14 @@
     <title>한국 폐암환우회</title>
 </head>
 <body>
-<div id="wrap">
-    <nav class="navbar navbar-expand-sm">
+<div id="all">
+    <nav class="navbar navbar-expand-sm" style="height:30%;">
         <div class="container-fluid">
             <div class="logo-li"><a href="/"><img src="../resources/images/logo.png" class="imgLogo"></a></div>
-
             <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">소개</a>
+                        <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">소개</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/organization">폐암환우회</a>
                             <a class="dropdown-item" href="/greeting">인사말</a>
@@ -68,27 +67,68 @@
         </div>
     </nav>
     <div class="middle">
-        <div class="sub_header">
-                <img src="../resources/images/index.png" class="index_img">
-                <div class="consult_outer">
-                    <a href="/consult">
-                        <img src="../resources/images/consult.png" class="consult_btn">
-                    </a>
-                </div>
-            <div class="parent">
-                <p class="noti">공지사항</p>
-                <div class="first">[공지사항게시판들이 보여질 곳]</div>
-                <div class="second">[공지사항게시판들이 보여질 곳]</div>
-                <div class="third">[공지사항게시판들이 보여질 곳]</div>
-            </div>
+        <img src="../resources/images/index.png" class="index_img">
+        <div class="consult_outer">
+            <a href="/consult">
+                <img src="../resources/images/consult.png" class="consult_btn">
+            </a>
+        </div>
+        <div class="parent" style="background-color: #EEEEEE;">
+            <p class="noti">폐암 환우회 소식</p>
+            <div class="first" style="padding-left: 1%; padding-right: 1%;">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="text-align: center;">제목</th>
+                        <th scope="col" style="text-align: center;">작성 시간</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="donation : ${donationList}">
+                        <td th:text="${donation.title}" style="text-align: center; padding-left: 5%;"></td>
+                        <td th:text="${donation.write_time}" style="text-align: center; padding-right: 5%;"></td>
+                    </tr>
+                    </tbody>
+                </table></div>
+            <div class="second" style="padding-left: 1%; padding-right: 1%;">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="text-align: center;">제목</th>
+                        <th scope="col" style="text-align: center;">작성 시간</th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
+                    <tr th:each="donation : ${donationList}">
+                        <td th:text="${donation.title}" style="text-align: center; padding-left: 5%;"></td>
+                        <td th:text="${donation.write_time}" style="text-align: center; padding-right: 5%;"></td>
+                    </tr>
+                    </tbody>
+                </table></div>
+            <div class="third" style="padding-left: 1%; padding-right: 1%;">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col" style="text-align: center;">제목</th>
+                        <th scope="col" style="text-align: center;">작성 시간</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="donation : ${donationList}">
+                        <td th:text="${donation.title}" style="text-align: center; padding-left: 5%;"></td>
+                        <td th:text="${donation.write_time}" style="text-align: center; padding-right: 5%;"></td>
+                    </tr>
+                    </tbody>
+                </table></div>
         </div>
         <div class="bottom_outer">
             <div class="bottom_info">
                 <div class="outer">
                     <img src="../resources/images/home.png" class="bottom_logo">
                     <p class="keyword">주소</p>
-                    <p class="info">경기도 김포시 고촌읍 김포대로 340<br>1동 703호 (김포뉴시티)</p>
+                    <p class="info">경기도 김포시 고촌읍 김포대로 340<br>1동 703호 (김포 뉴시티)</p>
                 </div>
 
 
@@ -108,7 +148,6 @@
                     <p class="keyword">메일</p>
                     <p class="info">johnleee@naver.com</p>
                 </div>
-
             </div>
         </div>
     </div>

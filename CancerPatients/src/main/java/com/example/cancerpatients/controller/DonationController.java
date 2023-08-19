@@ -29,4 +29,6 @@ public class DonationController {
 
         return "donation_manage";
     }
+
+
 }
