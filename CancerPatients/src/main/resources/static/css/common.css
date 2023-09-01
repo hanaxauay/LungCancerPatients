@@ -107,11 +107,11 @@ nav {
     height: 60px;
 }
 
-.tree_img {
+.tree_outer {
    text-align: center;
 }
-.tree__img {
-    width: 800px;
+.tree_img {
+    width: 600px;
 }
 
 .trace_img {

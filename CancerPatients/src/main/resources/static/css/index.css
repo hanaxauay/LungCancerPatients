@@ -80,11 +80,12 @@
     width:100%;
 }
 
+.consult_outer{
+    position:relative;
+}
 .consult_btn{
     position: absolute;
-    top: 15%;
-    right: 12%;
-    width:25%;
-    height:8%;
-
+    bottom: 500px;
+    right: 200px;
+    height: 110px;
 }
