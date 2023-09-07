@@ -2,6 +2,7 @@
     margin:0px;
     padding:0px;
     box-sizing:border-box;
+
 }
 
 html,body{
@@ -9,11 +10,11 @@ html,body{
 }
 
 /*이거 안해도 차이가 없는데..?*/
-#all {
-    min-height: 100%;
-    position: relative;
-    padding-bottom: 60px;
-}
+/*#all {*/
+/*    min-height: 100%;*/
+/*    position: relative;*/
+/*    padding-bottom: 60px;*/
+/*}*/
 
 .content_outer{
     margin-left: 2%;
@@ -175,3 +176,16 @@ li{
     color: #000000;
 }
 
+
+
+.big-navy {
+    font-size: 84px;
+    font-weight: bolder;
+    color: #0869D0;
+}
+
+.normal-charcoal{
+    font-size: 50px;
+    color: #0869D0;
+
+}
