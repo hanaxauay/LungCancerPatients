@@ -36,12 +36,9 @@
     box-sizing: border-box;
 }
 
-.bottom_outer{
-    display: flex;
+.outer{
     justify-content: center;
     text-align: center;
-    height: 100%;
-
 }
 
 .bottom_info{
@@ -52,17 +49,8 @@
 
 }
 
-.outer{
-    justify-content: center;
-    text-align: center;
-    height: 30%;
-
-}
-
 .bottom_logo{
-    /*margin-top: 20%;*/
     width:18%;
-    height:100%;
 }
 
 .keyword{
