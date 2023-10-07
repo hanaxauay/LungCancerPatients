@@ -1,37 +1,19 @@
-
-.parent{
-    padding:1%;
-    height: 50vh;
+#all{
+    width:100%;
+    min-width: 1620px;
 }
-
-.noti{
-    font-size: 150%;
-    padding-bottom: 1%;
-}
-.first {
-    background-color: white;
-    color:#626262;
-    float: left;
-    width:30%;
-    height:80%;
-    box-sizing: border-box;
-}
-
-.second{
-    background-color: white;
-    color:#626262;
-    float: left;
-    margin-left: 5%;
-    width:30%;
-    height:80%;
-    box-sizing: border-box;
+.shortcut_outer{
+    width:100%;
+    min-width: 1620px;
+    display: flex;
+    padding-top: 30px;
+    margin-left:3%;
+    margin-right:3%;
 }
 
 .third{
     background-color: white;
     color:#626262;
-    float: right;
-    width:30%;
     height:80%;
     box-sizing: border-box;
 }
@@ -61,14 +43,37 @@
 
 .index_img{
     width:100%;
+    min-width: 1620px;
 }
 
-.consult_outer{
-    position:relative;
+.shortcut_left{
+    height: 200px;
+    display: flex;
+    width:60%;
+    padding-top: 30px;
 }
-.consult_btn{
-    position: absolute;
-    bottom: 500px;
-    right: 200px;
-    height: 110px;
+
+.shortcut_right{
+    width:40%;
+    height: 200px;
+}
+
+.shortcut_element{
+    margin-right: 20px;
+    text-align: center;
+}
+.shortcut_img{
+    position: relative;
+    width: 50%;
+}
+
+.shortcut_left p{
+    font-size: 30px;
+    font-weight: 400;
+    color:#626262;
+}
+
+.shortcut_right p{
+    font-size: 20px;
+    color:#626262;
 }

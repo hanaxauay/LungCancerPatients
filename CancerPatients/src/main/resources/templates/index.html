@@ -70,84 +70,40 @@
     <div class="middle">
         <img src="../resources/images/indexx.png" class="index_img">
         <div class="content_outer">
-            <div class="consult_outer">
-                <!--            <a href="/consult">-->
-                <!--                <img src="../resources/images/consult.png" class="consult_btn">-->
-                <!--            </a>-->
-            </div>
-            <div class="parent">
-                <p class="noti">폐암 환우회 소식</p>
-                <div class="first" style="padding-left: 1%; padding-right: 1%;">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col" style="text-align: center;">제목</th>
-                            <th scope="col" style="text-align: center;">작성 시간</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="donation : ${donationList}">
-                            <td th:text="${donation.title}" style="text-align: center; padding-left: 5%;"></td>
-                            <td th:text="${donation.write_time}" style="text-align: center; padding-right: 5%;"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="second" style="padding-left: 1%; padding-right: 1%;">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col" style="text-align: center;">제목</th>
-                            <th scope="col" style="text-align: center;">작성 시간</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        <tr th:each="donation : ${donationList}">
-                            <td th:text="${donation.title}" style="text-align: center; padding-left: 5%;"></td>
-                            <td th:text="${donation.write_time}" style="text-align: center; padding-right: 5%;"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="third" style="padding-left: 1%; padding-right: 1%;">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col" style="text-align: center;">제목</th>
-                            <th scope="col" style="text-align: center;">작성 시간</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                        <tr th:each="donation : ${donationList}">
-                            <td th:text="${donation.title}" style="text-align: center; padding-left: 5%;"></td>
-                            <td th:text="${donation.write_time}" style="text-align: center; padding-right: 5%;"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="outer" style="display: flex;">
-                <div class="bottom_info">
-                    <div class="outer">
-                        <img src="../resources/images/home.png" class="bottom_logo">
-                        <p class="keyword">주소</p>
-                        <p class="info">경기도 김포시 고촌읍 김포대로 340<br>1동 703호 (김포 뉴시티)</p>
+            <div class="shortcut_outer">
+                <div class="shortcut_left">
+                    <div class="shortcut_element">
+                        <img src="../resources/images/cafe.png" class="shortcut_img">
+                        <p class="">카페로 이동</p>
+                    </div>
+                    <div class="shortcut_element">
+                        <img src="../resources/images/youtube.png" class="shortcut_img">
+                        <p>유튜브</p>
+                    </div>
+                    <div class="shortcut_element">
+                        <img src="../resources/images/consult.png" class="shortcut_img">
+                        <p>상담 신청하기</p>
                     </div>
                 </div>
-                <div class="bottom_info">
-                    <div class="outer">
-                        <img src="../resources/images/phone.png" class="bottom_logo">
-                        <p class="keyword">전화</p>
-                        <p class="info">대표 : 010-4467-8275</p>
-                    </div>
-                </div>
-                <div class="bottom_info">
-                    <div class="outer">
-                        <img src="../resources/images/email.png" class="bottom_logo">
-                        <p class="keyword">메일</p>
-                        <p class="info">johnleee@naver.com</p>
+                <div class="shortcut_right">
+                    <p>폐암 환우회 소식</p>
+
+                    <div class="third" style="padding-left: 1%; padding-right: 1%;">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col" style="text-align: center;">제목</th>
+                                <th scope="col" style="text-align: center;">작성일</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr th:each="donation : ${donationList}">
+                                <td th:text="${donation.title}" style="text-align: center; padding-left: 5%;"></td>
+                                <td th:text="${donation.write_time}" style="text-align: center; padding-right: 5%;"></td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -189,11 +145,36 @@
                 </div>
 
             </div>
+            <div class="outer" style="display: flex;">
+                <div class="bottom_info">
+                    <div class="outer">
+                        <img src="../resources/images/home.png" class="bottom_logo">
+                        <p class="keyword">주소</p>
+                        <p class="info">경기도 김포시 고촌읍 김포대로 340<br>1동 703호 (김포 뉴시티)</p>
+                    </div>
+                </div>
+                <div class="bottom_info">
+                    <div class="outer">
+                        <img src="../resources/images/phone.png" class="bottom_logo">
+                        <p class="keyword">전화</p>
+                        <p class="info">대표 : 010-4467-8275</p>
+                    </div>
+                </div>
+                <div class="bottom_info">
+                    <div class="outer">
+                        <img src="../resources/images/email.png" class="bottom_logo">
+                        <p class="keyword">메일</p>
+                        <p class="info">johnleee@naver.com</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
+
 <footer>
-    비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포뉴시티) | Tel : 010-4467-8275
+    비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포 뉴시티) | Tel : 010-4467-8275
 </footer>
+</div>
 </body>
 </html>
