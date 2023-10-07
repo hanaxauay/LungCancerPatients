@@ -88,21 +88,12 @@
                 <div class="shortcut_right">
                     <p>폐암 환우회 소식</p>
 
-                    <div class="third" style="padding-left: 1%; padding-right: 1%;">
+                    <div class="noticeboard" style="padding-left: 1%; padding-right: 1%;">
                         <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col" style="text-align: center;">제목</th>
-                                <th scope="col" style="text-align: center;">작성일</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-
                             <tr th:each="donation : ${donationList}">
-                                <td th:text="${donation.title}" style="text-align: center; padding-left: 5%;"></td>
                                 <td th:text="${donation.write_time}" style="text-align: center; padding-right: 5%;"></td>
+                                <td th:text="${donation.title}" style="text-align: center; padding-left: 5%;"></td>
                             </tr>
-                            </tbody>
                         </table>
                     </div>
                 </div>

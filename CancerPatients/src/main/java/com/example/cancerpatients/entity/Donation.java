@@ -4,6 +4,7 @@ import lombok.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -26,14 +27,14 @@ public class Donation {
     private String author;
 
     @Column(name="WRITE_TIME")
-    private LocalDateTime write_time;
+    private LocalDate write_time;
 
     @Column(name="VIEWS")
     private int views;
 
 
     @Builder
-    public Donation(Long seq, String title, String content, String author, LocalDateTime write_time, int views) {
+    public Donation(Long seq, String title, String content, String author, LocalDate write_time, int views) {
         this.seq = seq;
         this.title = title;
         this.content = content;
