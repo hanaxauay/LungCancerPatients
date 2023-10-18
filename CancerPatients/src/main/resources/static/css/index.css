@@ -7,8 +7,8 @@
     min-width: 1620px;
     display: flex;
     padding-top: 30px;
-    margin-left:3%;
-    margin-right:3%;
+    margin-left:50px;
+    margin-right:50px;
 }
 
 .noticeboard{
@@ -76,4 +76,19 @@
 .shortcut_right p{
     font-size: 20px;
     color:#626262;
+}
+
+.autoplay{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.sponsor{
+    /*margin-top: 40px;*/
+    text-align:center;
+    background-color: #BDCBDA;
+    margin: 40px;
+    padding-top: 20px;
+    padding-bottom:20px;
+
 }

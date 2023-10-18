@@ -179,14 +179,18 @@ li{
 
 
 
-.big-navy {
-    font-size: 84px;
+
+/* trace.html */
+.big-green {
+    font-size: 54px;
     font-weight: bolder;
-    color: #0869D0;
+    color: #00907B;
 }
 
 .normal-charcoal{
-    font-size: 50px;
-    color: #0869D0;
+    font-size: 30px;
+    color: #626262;
 
 }
+
+/* ~ trace.html */
