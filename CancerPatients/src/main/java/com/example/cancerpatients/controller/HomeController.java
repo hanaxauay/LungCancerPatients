@@ -49,6 +49,17 @@ public class HomeController {
         return "consult";
     }
 
+    @GetMapping("/breath_walk")
+    public String goBreath_walk(){
+        return "breath_walk";
+    }
+
+    @GetMapping("/breath_program")
+    public String goBreath_program(){
+        return "breath_program";
+    }
+
+
     @GetMapping("/tree")
     public String gotree(){
         return "tree";

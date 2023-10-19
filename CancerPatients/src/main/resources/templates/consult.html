@@ -32,7 +32,7 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/breath_program">새숨 프로그램</a>
                             <a class="dropdown-item" href="/breath_walk">새숨 걷기</a>
-                            <a class="dropdown-item" href="/breath_call">새숨 전화 상담</a>
+                            <a class="dropdown-item" href="/consult">새숨 전화 상담</a>
                             <a class="dropdown-item" href="/activity">대외 활동</a>
                         </div>
                     </li>
@@ -40,7 +40,7 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">후원</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/donation">후원 신청</a>
+<!--                            <a class="dropdown-item" href="/donation">후원 신청</a>-->
                             <a class="dropdown-item" href="/donation_manage">후원금 운영</a>
                         </div>
                     </li>
@@ -71,8 +71,22 @@
     <div class="middle">
         <div class="sub_header">
             <div class="sub_category">
-                <div class="sub_menu">
-                    <a href="/consult"><span class="sub_menu_text">새숨 전화 상담</span></a>
+                <div class="sub_category">
+                    <div class="sub_menu">
+                        <a href="/breath_program"><span class="sub_menu_text">새숨 프로그램</span></a>
+                    </div>
+
+                    <div class="sub_menu">
+                        <a href="/breath_walk"><span class="sub_menu_text">새숨 걷기</span></a>
+                    </div>
+
+                    <div class="sub_menu">
+                        <a href="/consult"><span class="sub_menu_text">새숨 전화 상담</span></a>
+                    </div>
+
+                    <div class="sub_menu">
+                        <a href="/activity"><span class="sub_menu_text">새숨 대외 활동</span></a>
+                    </div>
                 </div>
             </div>
 
@@ -93,6 +107,7 @@
                         <input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해 주세요">
 
                     </div>
+                    <br/>
 
 
 
@@ -103,14 +118,16 @@
                         <input type="text" class="form-control" name="reg_id" id="reg_id" placeholder="성함을 입력해 주세요">
 
                     </div>
+                    <br/>
 
                     <div class="mb-3">
 
-                        <p class="normal-charcoal">번호</p>
+                        <p class="normal-charcoal">휴대폰 번호</p>
 
-                        <input type="text" class="form-control" name="phone" id="phone" placeholder="휴대폰 번호를 입력해 주세요">
+                        <input type="text" class="form-control" name="phone" id="phone" placeholder="-를 제외한 010xxxxxxxx 형식으로 휴대폰 번호를 입력해 주세요">
 
                     </div>
+                    <br/>
 
 
 
@@ -122,6 +139,7 @@
                         <textarea class="form-control" rows="5" name="content" id="content" placeholder="내용을 입력해 주세요" ></textarea>
 
                     </div>
+                    <br/>
 
 
                 </form>
