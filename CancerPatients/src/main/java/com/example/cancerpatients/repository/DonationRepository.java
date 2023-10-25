@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface DonationRepository extends JpaRepository<Donation,Long> {
-    List<Donation> findAll();
+
 
 }

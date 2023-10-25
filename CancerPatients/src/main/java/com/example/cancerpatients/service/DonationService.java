@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DonationService {
@@ -44,6 +45,13 @@ public class DonationService {
         return donationDtoList;
     }
 
+    public List<Donation> getAllDonations() {
+        return donationRepository.findAll();
+    }
+
+    public Optional<Donation> getDonationById(Long seq) {
+        return donationRepository.findById(seq);
+    }
 
 
 

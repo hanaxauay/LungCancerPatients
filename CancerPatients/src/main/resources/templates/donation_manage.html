@@ -91,7 +91,7 @@
                         <tr th:each="donation : ${donationList}">
                             <td th:text="${donation.seq}"></td>
                             <td>
-                                <a th:href="@{'/detail/' + ${donation.seq}}" th:text="${donation.title}">게시물 보기</a>
+                                <a th:href="@{'/detailDonation/' + ${donation.seq}}" th:text="${donation.title}">게시물 보기</a>
 
                             </td>
                             <td th:text="${donation.author}"></td>
