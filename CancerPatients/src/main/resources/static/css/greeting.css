@@ -1,14 +1,11 @@
-
 .content{
     width: 90%;
     font-size:large;
     line-height: 170%;
-
 }
 
 .content_outer{
     display: flex; align-items: center; justify-content: center;
-
 }
 
 .text_right{
@@ -29,7 +26,6 @@
     margin-right:2%;
     margin-bottom: 1%;
 }
-
 
 @media screen and (max-width: 768px) {
     .content_outer {

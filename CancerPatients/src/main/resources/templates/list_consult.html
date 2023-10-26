@@ -76,35 +76,33 @@
         </div>
         <div class="content_outer">
             <div class="content">
+                <span class="big-green">새숨 전화 상담 목록<br/></span>
+                <p class="normal-charcoal">메모로 상담 여부를 관리할 수 있습니다.</p><br/><br/>
 
-                리스트 컨설트
                 <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">글번호</th>
                         <th scope="col">제목</th>
-                        <th scope="col">글쓴이</th>
-                        <th scope="col">작성 시간</th>
+                        <th scope="col">내용</th>
+                        <th scope="col">상담 신청자</th>
+                        <th scope="col">휴대폰 번호</th>
+                        <th scope="col">메모</th>
+
                     </tr>
                     </thead>
                     <tbody>
 
-                    <tr th:each="donation : ${donationList}">
-                        <td th:text="${donation.seq}"></td>
-                        <td>
-                            <a th:href="@{'/detailDonation/' + ${donation.seq}}" th:text="${donation.title}">게시물 보기</a>
-
-                        </td>
-                        <td th:text="${donation.author}"></td>
-                        <td th:text="${donation.write_time}"></td>
+                    <tr th:each="consult : ${consultList}">
+                        <td th:text="${consult.seq}"></td>
+                        <td th:text="${consult.title}"></td>
+                        <td th:text="${consult.content}"></td>
+                        <td th:text="${consult.author}"></td>
+                        <td th:text="${consult.phone}"></td>
+                        <text id="memo"  value="" th:text="${consult.memo}"></text>
                     </tr>
                     </tbody>
                 </table>
-
-
-
-
-
             </div>
         </div>
 

@@ -26,6 +26,10 @@ html,body{
     margin-right:2%;
 }
 
+.help{
+    font-size:30px;
+    font-weight: 200;
+}
 nav {
     display: flex;
     justify-content: space-around;
@@ -181,9 +185,6 @@ li{
     color: #000000;
 }
 
-
-
-
 .consultBtn{
     display: inline-block;
     padding: 10px 20px; /* 버튼 패딩 설정 */
@@ -203,7 +204,6 @@ li{
     background-color: #006C5D; /* 호버 시 배경색 변경 */
 }
 
-
 .consultManageBtn{
     display: inline-block;
     padding: 10px 20px; /* 버튼 패딩 설정 */
@@ -222,7 +222,6 @@ li{
 .consultManageBtn:hover {
     background-color: #626262; /* 호버 시 배경색 변경 */
 }
-
 
 /* trace.html */
 .big-green {
