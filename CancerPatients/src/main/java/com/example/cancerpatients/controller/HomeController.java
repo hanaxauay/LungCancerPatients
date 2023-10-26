@@ -59,9 +59,14 @@ public class HomeController {
         return "breath_program";
     }
 
+    @GetMapping("/activity")
+    public String goActivity(){
+        return "activity";
+    }
+
 
     @GetMapping("/tree")
-    public String gotree(){
+    public String goTree(){
         return "tree";
     }
 
