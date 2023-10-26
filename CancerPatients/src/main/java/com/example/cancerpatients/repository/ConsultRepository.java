@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ConsultRepository extends JpaRepository<Consult,Long> {
+    Consult findBySeq(Long seq);
 
 
 }

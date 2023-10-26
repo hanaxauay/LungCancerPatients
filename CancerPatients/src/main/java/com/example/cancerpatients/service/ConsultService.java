@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ConsultService {
@@ -39,5 +40,35 @@ public class ConsultService {
             consultDtoList.add(consultDto);
         }
         return consultDtoList;
+    }
+
+
+//    @Transactional
+//    public void updateMemo(Long seq, String newMemo) {
+//        Optional<Consult> optionalConsult = consultRepository.findById(seq);
+//
+//        if (optionalConsult.isPresent()) {
+//            Consult consult = optionalConsult.get();
+//            consult.setMemo(newMemo);
+//            consultRepository.save(consult);
+//        } else {
+//            // 처리할 오류 또는 예외 상황에 대한 로직을 추가하세요.
+//        }
+//    }
+
+    @Transactional
+    public ConsultDto getConsultBySeq(Long seq) {
+        Consult consult = consultRepository.findBySeq(seq);
+        if (consult != null) {
+            return ConsultDto.builder()
+                    .seq(consult.getSeq())
+                    .author(consult.getAuthor())
+                    .title(consult.getTitle())
+                    .content(consult.getContent())
+                    .phone(consult.getPhone())
+                    .memo(consult.getMemo())
+                    .build();
+        }
+        return null; // 혹시 해당 seq로 찾지 못한 경우 null을 반환하거나 다른 처리를 수행할 수 있습니다.
     }
 }

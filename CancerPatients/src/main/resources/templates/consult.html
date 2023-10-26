@@ -17,7 +17,7 @@
         if (!pass1)
             history.go(-1);
         if (pass1.toLowerCase() == "admin777") { // 암호지정
-            location.href ='list_consult'; // 이동할 웹페이지 지정 - 현재창에서 이동
+            location.href ='consult_list'; // 이동할 웹페이지 지정 - 현재창에서 이동
             break;
         }
         testV+=1;
@@ -114,9 +114,14 @@
         <div class="content_outer">
             <div class="content" style="margin-top: 2%; margin-bottom: 2%;">
 
+                <div style="text-align: center;">
                 <span class="big-green">새숨 전화 상담<br/></span>
                 <p class="normal-charcoal">휴대폰 번호와 함께 상담 내용을 보내주시면 한국 폐암환우회에서 입력하신 번호로 전화를 드립니다.</p><br/><br/>
 
+                <img src="../resources/images/business/breathe_consult.png" style="width: 1000px;">
+
+                    </div>
+                <br/><br/><br/><br/><br/>
                 <form action="/consult" method="post">
                     <div class="mb-3">
                         <p class="normal-charcoal">제목</p>

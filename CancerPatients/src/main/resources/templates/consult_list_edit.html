@@ -99,7 +99,11 @@
                         <td th:text="${consult.content}"></td>
                         <td th:text="${consult.author}"></td>
                         <td th:text="${consult.phone}"></td>
-                        <text id="memo"  value="" th:text="${consult.memo}"></text>
+                        <form method="post" th:action="@{/consult_list_edit}">
+                            <input type="hidden" name="seq" th:value="${consult.seq}" />
+                            <textarea name="newMemo" th:text="${consult.memo}" rows="4" cols="50"></textarea>
+                            <button type="submit">메모 업데이트</button>
+                        </form>
                     </tr>
                     </tbody>
                 </table>

@@ -70,6 +70,11 @@ public class HomeController {
         return "tree";
     }
 
+    @GetMapping("/question")
+    public String goQuestion(){
+        return "question";
+    }
+
 //    @GetMapping("/dbTest")
 ///   public List<DonationDto> dbTest() {
 //    public ResponseEntity<String> dbTest(){

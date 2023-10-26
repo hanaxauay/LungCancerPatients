@@ -230,8 +230,20 @@ li{
     color: #00907B;
 }
 
+.big-navy {
+    font-size: 40px;
+    font-weight: bolder;
+    color: #202349;
+}
+
 .normal-charcoal{
     font-size: 20px;
+    color: #626262;
+
+}
+
+.big-charcoal{
+    font-size: 25px;
     color: #626262;
 
 }
