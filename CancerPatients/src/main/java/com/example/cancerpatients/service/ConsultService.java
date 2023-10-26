@@ -43,19 +43,14 @@ public class ConsultService {
     }
 
 
-//    @Transactional
-//    public void updateMemo(Long seq, String newMemo) {
-//        Optional<Consult> optionalConsult = consultRepository.findById(seq);
-//
-//        if (optionalConsult.isPresent()) {
-//            Consult consult = optionalConsult.get();
-//            consult.setMemo(newMemo);
-//            consultRepository.save(consult);
-//        } else {
-//            // 처리할 오류 또는 예외 상황에 대한 로직을 추가하세요.
-//        }
-//    }
-
+    public Consult updateMemo(Long seq, String newMemo) {
+        Consult consult = consultRepository.findById(seq).orElse(null);
+        if (consult != null) {
+            consult.setMemo(newMemo);
+            return consultRepository.save(consult);
+        }
+        return null;
+    }
     @Transactional
     public ConsultDto getConsultBySeq(Long seq) {
         Consult consult = consultRepository.findBySeq(seq);

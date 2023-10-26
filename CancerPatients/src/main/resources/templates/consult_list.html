@@ -11,33 +11,59 @@
 </head>
 <body>
 <script>
-    $(document).on("click", ".consultBtn", function(e) {
-        var seqs = $(this).val();    // 클릭된 수정버튼의 id값 변수에 담기
+    $(document).ready(function () {
+        // 수정 버튼 클릭 시
+        $(".updateBtn").click(function () {
+            var row = $(this).closest("tr"); // 클릭한 버튼이 속한 행
+            var memoCell = row.find(".memo-cell"); // 메모 셀
 
-        var memo = $(this).closest("tr").find("td:eq(5)").text().trim(); // 수정할 메모 내용 추출
+            // 현재 메모 텍스트 저장
+            var currentMemo = memoCell.text().trim();
 
-        $.ajax({
-            url: '/consult_list_edit', // 수정 페이지 URL로 변경
-            dataType: 'json',
-            type: 'GET',
-            data: {
-                seq: seqs,
-            },
-            success: function(result) {
-                var updatebtn = e.target.parentElement.parentElement.parentElement;
+            // 메모 셀을 textarea로 변경
+            memoCell.html('<textarea class="memo-textarea">' + currentMemo + '</textarea>');
 
-                if (result) {
-                    updatebtn.children[5].innerHTML = `
-                <form action="/consult_list_edit" method="post">
-                    <textarea name="memo" id="edit-box" autocomplete="off">${memo}</textarea>
-                    <button id="update-complete-btn" value="${seqs}" type="submit">완료</button>
-                    <button id="cancel-btn" type="button">취소</button>
-                </form>
-                `;
-                }
-            }
+            // 수정된 내용 저장 버튼 추가
+            memoCell.append('<button class="saveBtn">저장</button>');
+
+            // 저장 버튼 클릭 시
+            $(".saveBtn").click(function () {
+                var newMemo = memoCell.find(".memo-textarea").val();
+                memoCell.html(newMemo);
+
+                // 여기에 AJAX를 사용하여 서버로 업데이트된 메모를 전송할 수 있음
+                // AJAX 요청 및 서버 업데이트 코드 작성
+            });
         });
     });
+
+    $(document).ready(function () {
+        $(".updateBtn").click(function () {
+            var row = $(this).closest("tr");
+            var memoCell = row.find(".memo-cell");
+            var newMemo = memoCell.find(".memo-textarea").val();
+
+            // AJAX를 사용하여 서버에 메모 업데이트 요청을 보냅니다.
+            $.ajax({
+                type: "POST",
+                url: "/consult/updateMemo",
+                data: {
+                    seq: $(this).val(),
+                    newMemo: newMemo
+                },
+                success: function (response) {
+                    // 성공적으로 업데이트된 경우
+                    memoCell.text(newMemo);
+                    console.log(response);
+                },
+                error: function (error) {
+                    // 업데이트 실패 시 에러 처리
+                    console.error(error);
+                }
+            });
+        });
+    });
+
 </script>
 
 <div id="all">
@@ -132,8 +158,9 @@
                         <td th:text="${consult.phone}"  style="width: 100px;"></td>
                         <td th:text="${consult.title}"  style="width: 200px;"></td>
                         <td th:text="${consult.content}"></td>
-                        <td th:text="${consult.memo}"></td>
-                        <td><button id="updateBtn" value="${consult.seq}" type="button" class="consultBtn">수정</button></td>
+                        <td class="memo-cell" th:text="${consult.memo}"></td>
+                        <td><button class="consultBtn updateBtn" value="${consult.seq}" type="button">수정</button></td>
+
                     </tr>
                     </tbody>
 
