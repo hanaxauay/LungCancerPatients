@@ -3,6 +3,7 @@ package com.example.cancerpatients.controller;
 import com.example.cancerpatients.dto.ConsultDto;
 import com.example.cancerpatients.entity.Consult;
 import com.example.cancerpatients.service.ConsultService;
+import com.sun.tools.jconsole.JConsoleContext;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,6 +45,7 @@ public class ConsultController {
         Consult updatedConsult = consultService.updateMemo(seq, newMemo);
         if (updatedConsult != null) {
             return ResponseEntity.ok("메모가 업데이트되었습니다.");
+
         } else {
             return ResponseEntity.badRequest().body("해당 상담 정보를 찾을 수 없습니다.");
         }

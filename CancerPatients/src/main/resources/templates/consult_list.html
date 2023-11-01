@@ -17,28 +17,21 @@
             var row = $(this).closest("tr"); // 클릭한 버튼이 속한 행
             var memoCell = row.find(".memo-cell"); // 메모 셀
 
-            // 현재 메모 텍스트 저장
-            var currentMemo = memoCell.text().trim();
+            if (!memoCell.hasClass("editing")) {
+                // 현재 메모 텍스트 저장
+                var currentMemo = memoCell.text().trim();
 
-            // 메모 셀을 textarea로 변경
-            memoCell.html('<textarea class="memo-textarea">' + currentMemo + '</textarea>');
+                // 메모 셀을 textarea로 변경
+                memoCell.html('<textarea class="memo-textarea">' + currentMemo + '</textarea>');
 
-            // 수정된 내용 저장 버튼 추가
-            memoCell.append('<button class="saveBtn">저장</button>');
-
-            // 저장 버튼 클릭 시
-            $(".saveBtn").click(function () {
-                var newMemo = memoCell.find(".memo-textarea").val();
-                memoCell.html(newMemo);
-
-                // 여기에 AJAX를 사용하여 서버로 업데이트된 메모를 전송할 수 있음
-                // AJAX 요청 및 서버 업데이트 코드 작성
-            });
+                // 수정된 내용 저장 버튼 추가
+                memoCell.append('<button class="saveBtn">저장</button>');
+                memoCell.addClass("editing");
+            }
         });
-    });
 
-    $(document).ready(function () {
-        $(".updateBtn").click(function () {
+        // 저장 버튼 클릭 시
+        $("table").on("click", ".saveBtn", function () {
             var row = $(this).closest("tr");
             var memoCell = row.find(".memo-cell");
             var newMemo = memoCell.find(".memo-textarea").val();
@@ -48,12 +41,13 @@
                 type: "POST",
                 url: "/consult/updateMemo",
                 data: {
-                    seq: $(this).val(),
+                    seq: row.find(".updateBtn").val(),
                     newMemo: newMemo
                 },
                 success: function (response) {
                     // 성공적으로 업데이트된 경우
                     memoCell.text(newMemo);
+                    memoCell.removeClass("editing");
                     console.log(response);
                 },
                 error: function (error) {
@@ -63,7 +57,6 @@
             });
         });
     });
-
 </script>
 
 <div id="all">
