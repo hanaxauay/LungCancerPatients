@@ -34,7 +34,7 @@
     min-width: 1620px;
     display: flex;
     justify-content: space-around;
-    padding-top: 30px;
+    padding-top: 10px;
     height: 200px;
 }
 
@@ -77,8 +77,8 @@
     text-align:center;
     /*background-color: #BDCBDA;*/
     margin: 60px;
-    padding-top: 20px;
-    padding-bottom:20px;
+    padding-top: 10px;
+    padding-bottom:10px;
 }
 
 .sponsor img{
@@ -86,5 +86,6 @@
     height: 50px;
     object-fit: cover;
     align-self: center;
+    border:1px;
 
 }
