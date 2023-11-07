@@ -20,10 +20,10 @@ public class DonationService {
         this.donationRepository = donationRepository;
     }
 
-//    @Transactional
-//    public Long savePost(DonationDto donationDto) {
-//        return donationRepository.save(donationDto.toEntity()).getSeq();
-//    }
+    @Transactional
+    public Long savePost(DonationDto donationDto) {
+        return donationRepository.save(donationDto.toEntity()).getSeq();
+    }
 
     @Transactional
     public List<DonationDto> getDonationList(){

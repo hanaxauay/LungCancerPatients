@@ -60,7 +60,6 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false">암 치료정보</a>
                         <div class="dropdown-menu">
-<!--                            <a class="dropdown-item" href="/lung">폐암이란</a>-->
                             <a class="dropdown-item" href="/question">자주 묻는 질문</a>
                         </div>
                     </li>
@@ -70,7 +69,6 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/notice">공지사항</a>
                             <a class="dropdown-item" href="/gallery">갤러리</a>
-                            <a class="dropdown-item" href="/news">복지 뉴스</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -81,9 +79,6 @@
                             <a class="dropdown-item" href="/donation_manage">후원금 운영</a>
                         </div>
                     </li>
-                    <!--                    <li class="nav-item ms-auto"> &lt;!&ndash; ms-auto 클래스로 변경 &ndash;&gt;-->
-                    <!--                        <a class="nav-link" href="#">관리자 로그인</a>-->
-                    <!--                    </li>-->
                 </ul>
             </div>
         </div>
@@ -117,17 +112,17 @@
 
                 <img src="../resources/images/business/breath_consult.png" style="width: 1600px;">
 
-                <br/><br/><br/><br/><br/>
+                <br/><br/>
                 <div class="card card-4">
                     <form action="/consult" method="post">
                         <div class="mb-3">
                             <p class="normal-charcoal">제목</p>
-                            <input type="text" class="form-control" name="title"placeholder="제목을 입력해 주세요">
+                            <input type="text" class="form-control" name="title"placeholder="상담 제목을 입력해 주세요">
                         </div>
                         <br/>
                         <div class="mb-3">
                             <p class="normal-charcoal">성함</p>
-                            <input type="text" class="form-control" name="author"placeholder="성함을 입력해 주세요">
+                            <input type="text" class="form-control" name="author"placeholder="상담을 원하시는 분의 성함을 입력해 주세요">
 
                         </div>
                         <br/>
@@ -138,16 +133,17 @@
                         <br/>
                         <div class="mb-3">
                             <p class="normal-charcoal">내용</p>
-                            <textarea class="form-control" rows="5" name="content" placeholder="내용을 입력해 주세요" ></textarea>
+                            <textarea class="form-control" rows="5" name="content" placeholder="상담 내용을 입력해 주세요" ></textarea>
                         </div>
                         <br/>
                             <input class="consultBtn" type="submit" role="button" value="글쓰기" />
                     </form>
                     <div style="width: 100%; padding-top: 5px;">
-                        <input type="submit" role="button" class="consultManageBtn" onClick="passWord()" value="상담 관리(관리자 전용)"/>
+                        <input type="submit" class="consultManageBtn" onClick="passWord()" value="상담 관리(관리자 전용)"/>
 
                     </div>
                 </div>
+                <br/><br/><br/>
             </div>
         </div>
 

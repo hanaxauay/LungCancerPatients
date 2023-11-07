@@ -7,53 +7,6 @@
   <link href="../resources/css/common.css" rel="stylesheet" />
   <title>한국 폐암환우회</title>
 
-  <style>
-
-    <style>
-      /* Add some basic styling to the content */
-    .content {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      font-family: Arial, sans-serif;
-    }
-
-    h1 {
-      font-size: 24px;
-      color: #333;
-    }
-
-    h2 {
-      font-size: 20px;
-      color: #333;
-    }
-
-    p {
-      font-size: 14px;
-      color: #777;
-    }
-
-    strong {
-      font-weight: bold;
-    }
-
-    /* Add some spacing and styling to the content text */
-    .content div {
-      margin-top: 20px;
-    }
-
-    /* Style the author and write_time spans */
-    .content span {
-      font-weight: bold;
-    }
-
-    /* Style the content text */
-    .content div {
-      font-size: 16px;
-      line-height: 1.6;
-    }
-    </style>
-  </style>
 </head>
 <body>
 
@@ -85,6 +38,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">암 치료정보</a>
             <div class="dropdown-menu">
+              <!--                            <a class="dropdown-item" href="/lung">폐암이란</a>-->
               <a class="dropdown-item" href="/question">자주 묻는 질문</a>
             </div>
           </li>
@@ -99,6 +53,7 @@
             <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                aria-haspopup="true" aria-expanded="false">후원</a>
             <div class="dropdown-menu">
+              <!--              <a class="dropdown-item" href="/donation">후원 신청</a>-->
               <a class="dropdown-item" href="/donation_manage">후원금 운영</a>
             </div>
           </li>
@@ -117,19 +72,20 @@
     </div>
     <div class="content_outer">
       <div class="content">
-        <h1>게시물 상세보기</h1>
-        <div th:each="donation : ${donation}">
-          <!-- 게시물 제목 -->
-          <h2 th:text="${donation.title}"></h2>
-          <!-- 게시물 작성자와 작성 시간 -->
-          <p>
-            <strong>글쓴이:</strong> <span th:text="${donation.author}"></span>
-            <strong>작성 시간:</strong> <span th:text="${donation.write_time}"></span>
-          </p>
-          <!-- 게시물 내용 -->
-          <div th:utext="${donation.content}"></div>
-        </div>
+          <form action="" method="post">
+            <div class="form-group">
+                <label>제목</label>
+                <input type="text" class="form-control" placeholder="Enter title" id="title">
+            </div>
+
+            <div class="form-group">
+              <label>내용</label>
+              <textarea class="form-control" rows="5" id="content"></textarea>
+            </div>
+            <input type="submit" id="btn-save" class="btn btn-primary">글 쓰기 완료</>
+          </form>
       </div>
+    </div>
 
   </div>
 </div>

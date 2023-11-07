@@ -223,6 +223,32 @@ li{
     background-color: #626262; /* 호버 시 배경색 변경 */
 }
 
+
+.writeBtn{
+    display: inline-block;
+    padding: 10px 20px; /* 버튼 패딩 설정 */
+    font-size: 16px; /* 버튼 텍스트 크기 */
+    background-color: #1089CF;; /* 배경색 설정 */
+    color: #fff; /* 글꼴색 설정 */
+    border: none; /* 테두리 없앰 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: right;
+    margin-bottom: 15px;
+}
+
+/* 버튼 호버 상태 스타일 */
+.writeBtn:hover {
+    background-color: #015B8E; /* 호버 시 배경색 변경 */
+}
+/* 버튼 호버 상태 스타일 */
+.consultBtn:hover {
+    background-color: #006C5D; /* 호버 시 배경색 변경 */
+}
+
 /* trace.html */
 .big-green {
     font-size: 54px;
