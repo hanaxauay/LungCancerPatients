@@ -33,8 +33,8 @@
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="/breath_program">새숨 프로그램</a>
                             <a class="dropdown-item" href="/breath_walk">새숨 걷기</a>
-                            <a class="dropdown-item" href="/consult">새숨 전화 상담</a>
                             <a class="dropdown-item" href="/activity">대외 활동</a>
+                            <a class="dropdown-item" href="/consult">새숨 전화 상담</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -70,17 +70,17 @@
         <img src="../resources/images/indexx.png" class="index_img">
         <div class="content_outer">
             <div class="shortcut_outer">
-                <div class="shortcut_left">
+                <div class="shortcut_left" style="display: flex;
+    justify-content: center;">
                     <div class="shortcut_element">
                         <a class="dropdown-item" href="https://cafe.naver.com/lungcancerpatient">
 
                         <img src="../resources/images/cafe.png" class="shortcut_img">
                         </a>
-                        <p class="">카페</p>
+                        <p>카페</p>
                     </div>
                     <div class="shortcut_element">
                         <a class="dropdown-item" href="https://www.youtube.com/">
-
                             <img src="../resources/images/youtube.png" class="shortcut_img"></a>
                         <p>유튜브</p>
                     </div>
@@ -91,7 +91,8 @@
                     </div>
                 </div>
                 <div class="shortcut_right">
-                    <p>폐암 환우회 소식</p>
+                    <p style="display: flex;
+    justify-content: center;">폐암 환우회 소식</p>
                     <div class="noticeboard" style="padding-left: 1%; padding-right: 1%;">
                         <table class="table">
                             <tr th:each="donation : ${donationList}">
@@ -112,12 +113,19 @@
             <h2 class="help" style="padding-left: 29px; color:#626262;" >함께 하는 기업</h2>
                 </div>
             <div class="autoplay">
-                <div class="sponsor"><img src="../resources/images/sponsor/merck.png" /><!--Merk--></div>
-                <div class="sponsor"><img src="../resources/images/sponsor/korean_medical_association.png" /><!--대한의사협회--></div>
-                <div class="sponsor"><img src="../resources/images/sponsor/roche.png" /><!--한국 로슈--></div>
-                <div class="sponsor"><img src="../resources/images/sponsor/janssen.png" /><!--한국 얀센--></div>
-                <div class="sponsor"><img src="../resources/images/sponsor/pfizer.png" /><!--한국 화이자--></div>
-                <div class="sponsor">한국 화이자</div>
+<!--                <div class="sponsor"><img src="../resources/images/sponsor/merck.png" />&lt;!&ndash;Merk&ndash;&gt;</div>-->
+<!--                <div class="sponsor"><img src="../resources/images/sponsor/korean_medical_association.png" />&lt;!&ndash;대한의사협회&ndash;&gt;</div>-->
+<!--                <div class="sponsor"><img src="../resources/images/sponsor/roche.png" />&lt;!&ndash;한국 로슈&ndash;&gt;</div>-->
+<!--                <div class="sponsor"><img src="../resources/images/sponsor/janssen.png" />&lt;!&ndash;한국 얀센&ndash;&gt;</div>-->
+<!--                <div class="sponsor"><img src="../resources/images/sponsor/pfizer.png" />&lt;!&ndash;한국 화이자&ndash;&gt;</div>-->
+<!--                <div class="sponsor">&lt;!&ndash;한국 화이자&ndash;&gt;</div>-->
+                <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--Merk--></div>
+                <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--대한의사협회--></div>
+                <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 로슈--></div>
+                <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 얀센--></div>
+                <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
+                <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
+                <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
             </div>
             <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E; margin-right: 100px; margin-left: 100px;"></h1>
             <div class="outer" style="padding-top:2%; display: flex; justify-content: center;">
