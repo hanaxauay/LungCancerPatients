@@ -55,6 +55,21 @@ public class DonationService {
         }
     }
 
+    public void deleteDonation(Long id) {
+        donationRepository.deleteById(id);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     @Transactional
     public List<DonationDto> getDonationList(){
         List<Donation> donationList = donationRepository.findAll();

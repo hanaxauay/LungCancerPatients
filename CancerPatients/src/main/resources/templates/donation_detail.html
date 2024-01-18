@@ -131,6 +131,8 @@
           <div th:utext="${donation.content}" style="text-align: center;"></div>
         </div>
         <a class="writeBtn" th:href="@{'/donation_edit/' + ${donation.seq}}" role="button">수정</a>
+        <a th:href="@{'/donation_delete/' + ${donation.seq}}" class="btn btn-danger">삭제</a>
+
       </div>
     </div>
   </div>

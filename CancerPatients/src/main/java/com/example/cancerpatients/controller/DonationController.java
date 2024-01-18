@@ -83,4 +83,17 @@ public class DonationController {
         donationService.updateDonation(id, donationDto);
         return "redirect:/donation_manage";
     }
+
+
+    @GetMapping("/donation_delete/{id}")
+    public String deleteDonation(@PathVariable Long id) {
+        donationService.deleteDonation(id);
+
+        // 글 삭제 후 donation.seq를 -1로 설정
+        Donation deletedDonation = new Donation();
+        deletedDonation.setSeq(-2L);
+
+        return "redirect:/donation_list";
+    }
+
 }
