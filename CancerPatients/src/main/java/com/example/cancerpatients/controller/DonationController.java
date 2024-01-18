@@ -3,7 +3,6 @@ package com.example.cancerpatients.controller;
 import com.example.cancerpatients.dto.DonationDto;
 import com.example.cancerpatients.entity.Donation;
 import com.example.cancerpatients.service.DonationService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,5 +45,13 @@ public class DonationController {
 //        }
     }
 
+    @GetMapping("/gallery_detail_1")
+    public String showGallery_Detail(Model model) {
 
+        return "gallery_detail_1";
+//        else {
+//            // 존재하지 않는 게시물에 대한 처리
+//            return "error";
+//        }
+    }
 }
