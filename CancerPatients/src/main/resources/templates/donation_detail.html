@@ -130,6 +130,7 @@
           <!-- 게시물 내용 -->
           <div th:utext="${donation.content}" style="text-align: center;"></div>
         </div>
+        <a class="writeBtn" th:href="@{'/donation_edit/' + ${donation.seq}}" role="button">수정</a>
       </div>
     </div>
   </div>

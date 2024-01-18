@@ -34,6 +34,27 @@ public class DonationService {
 
         return donationRepository.save(donation).getSeq();
     }
+
+ @Transactional
+    public void updateDonation(Long id, DonationDto donationDto) {
+        Optional<Donation> optionalDonation = donationRepository.findById(id);
+
+        if (optionalDonation.isPresent()) {
+            Donation existingDonation = optionalDonation.get();
+
+            existingDonation.setTitle(donationDto.getTitle());
+            existingDonation.setContent(donationDto.getContent());
+            existingDonation.setAuthor(donationDto.getAuthor());
+
+            // 기타 필요한 업데이트 작업 수행
+
+            // 업데이트된 기부 내용을 저장
+            donationRepository.save(existingDonation);
+        } else {
+            throw new RuntimeException("기부 내용을 찾을 수 없습니다: " + id);
+        }
+    }
+
     @Transactional
     public List<DonationDto> getDonationList(){
         List<Donation> donationList = donationRepository.findAll();

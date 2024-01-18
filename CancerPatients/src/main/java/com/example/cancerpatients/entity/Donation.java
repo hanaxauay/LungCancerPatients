@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
+@Setter
 @Entity
 @EntityListeners(AuditingEntityListener.class) /*JPA에게 해당 entity는 auditiong기능을 사용함을 알린다*/
 @NoArgsConstructor

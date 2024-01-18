@@ -31,7 +31,7 @@ public class DonationController {
         return "donation_manage";
     }
 
-    @GetMapping("/detailDonation/{seq}")
+    @GetMapping("/donation_detail/{seq}")
     public String showDonationDetail(@PathVariable Long seq, Model model) {
         Optional<Donation> optionalDonation = donationService.getDonationById(seq);
 
@@ -40,7 +40,7 @@ public class DonationController {
             model.addAttribute("donation", donation);
 
         }
-        return "detailDonation";
+        return "donation_detail";
 //        else {
 //            // 존재하지 않는 게시물에 대한 처리
 //            return "error";
@@ -67,5 +67,20 @@ public class DonationController {
     public String writeDonation(@ModelAttribute DonationDto donationDto) {
         donationService.savePost(donationDto);
         return "redirect:/donation_manage";
+    }
+
+
+    // 기존 게시물 수정 페이지 보기
+    @GetMapping("/donation_edit/{id}")
+    public String showEditDonationForm(@PathVariable Long id, Model model) {
+        Optional<Donation> donationDto = donationService.getDonationById(id);
+        model.addAttribute("donation", donationDto.orElse(new Donation())); // orElse는 Optional이 비어있을 때 기본값을 설정합니다.
+        return "donation_edit";
+    }
+
+    @PostMapping("/donation_edit/{id}")
+    public String updateDonation(@PathVariable Long id, DonationDto donationDto) {
+        donationService.updateDonation(id, donationDto);
+        return "redirect:/";
     }
 }
