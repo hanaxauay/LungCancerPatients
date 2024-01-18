@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -22,9 +24,16 @@ public class DonationService {
 
     @Transactional
     public Long savePost(DonationDto donationDto) {
-        return donationRepository.save(donationDto.toEntity()).getSeq();
-    }
+        Donation donation = Donation.builder()
+                .title(donationDto.getTitle())
+                .content(donationDto.getContent())
+                .author(donationDto.getAuthor())
+                .write_time(LocalDate.from(LocalDateTime.now())) // 현재 시간으로 설정
+                .views(0) // 초기 조회수 0으로 설정
+                .build();
 
+        return donationRepository.save(donation).getSeq();
+    }
     @Transactional
     public List<DonationDto> getDonationList(){
         List<Donation> donationList = donationRepository.findAll();

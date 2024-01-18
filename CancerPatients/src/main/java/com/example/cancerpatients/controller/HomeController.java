@@ -86,16 +86,6 @@ public class HomeController {
         return "gallery";
     }
 
-    @GetMapping("/donation_write")
-    public String goDonation_write(){
-        return "donation_write";
-    }
-
-    @PostMapping("/donation_write")
-    public String goDonation_write(DonationDto donationDto){
-        donationService.savePost(donationDto);
-        return "redirect:/";
-    }
 
 
 //    @GetMapping("/dbTest")
