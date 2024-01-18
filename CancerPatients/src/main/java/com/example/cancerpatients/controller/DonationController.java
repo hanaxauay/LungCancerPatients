@@ -81,6 +81,6 @@ public class DonationController {
     @PostMapping("/donation_edit/{id}")
     public String updateDonation(@PathVariable Long id, DonationDto donationDto) {
         donationService.updateDonation(id, donationDto);
-        return "redirect:/";
+        return "redirect:/donation_manage";
     }
 }
