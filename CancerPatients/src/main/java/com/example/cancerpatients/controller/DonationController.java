@@ -21,14 +21,14 @@ public class DonationController {
         this.donationService = donationService;
     }
 
-    @GetMapping("/donation_manage")
-    public String donationManage(Model model) {
+    @GetMapping("/donation")
+    public String donation(Model model) {
         List<DonationDto> donationList = donationService.getDonationList();
         model.addAttribute("donationList", donationList);
         model.addAttribute("donationTest", "Test");
         System.out.println("donationList: " + donationList);
 
-        return "donation_manage";
+        return "donation";
     }
 
     @GetMapping("/donation_detail/{seq}")
@@ -66,7 +66,7 @@ public class DonationController {
     @PostMapping("/donation_write")
     public String writeDonation(@ModelAttribute DonationDto donationDto) {
         donationService.savePost(donationDto);
-        return "redirect:/donation_manage";
+        return "redirect:/donation";
     }
 
 
@@ -81,7 +81,7 @@ public class DonationController {
     @PostMapping("/donation_edit/{id}")
     public String updateDonation(@PathVariable Long id, DonationDto donationDto) {
         donationService.updateDonation(id, donationDto);
-        return "redirect:/donation_manage";
+        return "redirect:/donation";
     }
 
 
