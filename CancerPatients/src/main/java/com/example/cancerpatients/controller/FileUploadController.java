@@ -20,7 +20,7 @@ public class FileUploadController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private String uploadPath = "/Users/ihana/Documents/GitHub/LungCancerPatients/CancerPatients/src/main/resources/static/images";
+    private String uploadPath = "/Users/ihana/Documents/GitHub/LungCancerPatients/CancerPatients/src/main/resources/static";
 
     @RequestMapping(value = "ckUpload", method = RequestMethod.POST)
     @ResponseBody
@@ -83,5 +83,8 @@ public class FileUploadController {
                 e.printStackTrace();
             }
         }
+
     }
+
+
 }

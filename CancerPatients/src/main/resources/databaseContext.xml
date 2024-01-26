@@ -28,6 +28,6 @@
 
 
     <!-- 예시: resources 설정 -->
-    <mvc:resources mapping="/ckUpload/**" location="/resources/static/images/ckUpload"/>
+    <mvc:resources mapping="/ckUpload/**" location="/resources/static/ckUpload"/>
 
 </beans>
