@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="../resources/css/common.css" rel="stylesheet" />
+    <title>한국 폐암환우회</title>
+</head>
+<body>
+
+<div id="all">
+    <nav class="navbar navbar-expand-sm" style="margin-top: 1%; margin-bottom: 1%;">
+        <div class="container-fluid">
+            <div class="logo-li"><a href="/"><img src="../resources/images/logo.png" class="imgLogo"></a></div>
+
+            <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <!-- 네비게이션 바 내용은 동일하게 유지됩니다. -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="middle">
+        <div class="sub_category">
+            <div class="sub_menu">
+                <a href="/notice"><span class="sub_menu_text">공지사항</span></a>
+            </div>
+            <div class="sub_menu">
+                <a href="/gallery"><span class="sub_menu_text">폐암환우회 활동</span></a>
+            </div>
+        </div>
+        <div class="content_outer">
+            <div class="content">
+                <!-- 수정 폼 -->
+                <form action="/notice_edit/{seq}" method="post" th:action="@{'/notice_edit/' + ${notice.seq}}">
+                    <!-- 기부글의 내용을 Thymeleaf로 동적으로 바인딩합니다. -->
+                    <input type="hidden" name="seq" th:value="${notice.seq}">
+                    <div class="form-group">
+                        <label>제목</label>
+                        <input type="text" class="form-control" placeholder="Enter title" name="title" th:value="${notice.title}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>글쓴이</label>
+                        <input type="text" class="form-control" placeholder="폐암환우회" name="author" th:value="${notice.author}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>내용</label>
+                        <textarea class="form-control" rows="5" name="content" th:text="${notice.content}"></textarea>
+                    </div>
+
+                    <input type="submit" id="btn-save" class="writeBtn" value="수정 완료" style="margin-top: 14px;">
+                    <br/><br/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <!-- 푸터 내용은 동일하게 유지됩니다. -->
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

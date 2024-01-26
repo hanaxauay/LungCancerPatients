@@ -76,10 +76,6 @@ public class HomeController {
         return "question";
     }
 
-    @GetMapping("/notice")
-    public String goNotice(){
-        return "notice";
-    }
 
     @GetMapping("/gallery")
     public String goGallery(){

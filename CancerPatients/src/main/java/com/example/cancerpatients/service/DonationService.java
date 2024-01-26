@@ -98,13 +98,4 @@ public class DonationService {
         return donationRepository.findById(seq);
     }
 
-
-
-//    public List<Donation> selectAll(){
-//        return donationRepository.findAll();
-//    }
-//
-//    public Donation selectOne(int seq){
-//        return donationRepository.findBySeq(seq);
-//    }
 }

@@ -78,30 +78,31 @@
         </div>
         <div class="content_outer">
             <div class="content" style="margin : 20px;">
+                <div style="text-align: center; color:#626262;">폐암환우회의 중요한 공지사항 입니다</div>
 
                 <table class="table">
                     <thead>
-                    <tr>
-                        <th scope="col">글번호</th>
-                        <th scope="col">제목</th>
-                        <th scope="col">글쓴이</th>
-                        <th scope="col">작성 시간</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">글번호</th>
+                            <th scope="col">제목</th>
+                            <th scope="col">글쓴이</th>
+                            <th scope="col">작성 시간</th>
+                        </tr>
                     </thead>
                     <tbody>
 
-                    <tr>
-                        <td >1</td> <!--글번호-->
+                    <tr th:each="notice : ${noticeList}">
+                        <td th:text="${notice.seq}"></td>
                         <td>
-                            <a>한국폐암환우회 창립(발기인)총회</a>
+                            <a th:href="@{'/notice_detail/' + ${notice.seq}}" th:text="${notice.title}">게시물 보기</a>
 
                         </td>
-                        <td>폐암환우회</td>
-                        <td>2024-1-12</td>
+                        <td th:text="${notice.author}"></td>
+                        <td th:text="${notice.write_time}"></td>
                     </tr>
                     </tbody>
                 </table>
-                <input class="writeBtn" type="button" value="글쓰기" th:onclick="window.location.href='/donation_write'"/>
+                <input class="writeBtn" type="button" value="글쓰기" th:onclick="window.location.href='/notice_write'"/>
 
             </div>
         </div>

@@ -93,7 +93,7 @@ public class DonationController {
         Donation deletedDonation = new Donation();
         deletedDonation.setSeq(-2L);
 
-        return "redirect:/donation_list";
+        return "redirect:/donation";
     }
 
 }
