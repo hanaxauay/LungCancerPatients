@@ -90,12 +90,12 @@
                     </div>
                 </div>
                 <div class="shortcut_right">
-                    <p style="margin-top: 14px;">폐암 환우회 소식</p>
+                    <p style="margin-top: 14px;">폐암 환우회 공지사항</p>
                     <div class="noticeboard" style="padding-left: 1%; padding-right: 1%;">
                         <table class="table">
-                            <tr th:each="donation : ${donationList}">
-                                <td th:text="${donation.write_time}" style="text-align: center; padding-right: 5%;"></td>
-                                <td th:text="${donation.title}" style="text-align: center; padding-left: 5%;"></td>
+                            <tr th:each="notice : ${noticeList}">
+                                <td th:text="${notice.write_time}" style="text-align: center; padding-right: 5%;"></td>
+                                <td th:text="${notice.title}" style="text-align: center; padding-left: 5%;"></td>
                             </tr>
                         </table>
                     </div>

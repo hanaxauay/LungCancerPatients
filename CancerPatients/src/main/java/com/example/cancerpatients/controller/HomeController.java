@@ -1,7 +1,9 @@
 package com.example.cancerpatients.controller;
 
 import com.example.cancerpatients.dto.DonationDto;
+import com.example.cancerpatients.dto.NoticeDto;
 import com.example.cancerpatients.service.DonationService;
+import com.example.cancerpatients.service.NoticeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,20 +15,20 @@ import java.util.List;
 @Controller
 @Slf4j
 public class HomeController {
-    private final DonationService donationService;
+    private final NoticeService noticeService;
 
-    public HomeController(DonationService donationService) {
+    public HomeController(NoticeService noticeService) {
 
-        this.donationService = donationService;
+        this.noticeService = noticeService;
     }
 
     @GetMapping("/")
     public String home(Model model){
 
-        List<DonationDto> donationList = donationService.getDonationList();
-        model.addAttribute("donationList", donationList);
-        model.addAttribute("donationTest", "Test");
-        System.out.println("donationList: " + donationList);
+        List<NoticeDto> noticeList = noticeService.getNoticeList();
+        model.addAttribute("noticeList", noticeList);
+        model.addAttribute("noticeTest", "Test");
+        System.out.println("noticeList: " + noticeList);
 
         return "index";
     }

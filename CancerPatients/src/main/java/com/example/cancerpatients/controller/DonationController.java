@@ -47,16 +47,6 @@ public class DonationController {
 //        }
     }
 
-    @GetMapping("/gallery_detail_1")
-    public String showGallery_Detail(Model model) {
-
-        return "gallery_detail_1";
-//        else {
-//            // 존재하지 않는 게시물에 대한 처리
-//            return "error";
-//        }
-    }
-
     @GetMapping("/donation_write")
     public String showWriteDonationForm(Model model) {
         model.addAttribute("donationDto", new DonationDto());
@@ -91,7 +81,7 @@ public class DonationController {
 
         // 글 삭제 후 donation.seq를 -1로 설정
         Donation deletedDonation = new Donation();
-        deletedDonation.setSeq(-2L);
+        deletedDonation.setSeq(-1L);
 
         return "redirect:/donation";
     }
