@@ -1,17 +1,8 @@
 .noticeboard{
     background-color: white;
     color:#626262;
-    height:120px;
-    width: 90%;
-}
-
-.noticeboard td{
-    color:#626262;
-    height:10px;
-    width: 30%;
-    text-align: center;
-    verflow: hidden; white-space: nowrap; text-overflow: ellipsis;
-
+    height:80%;
+    box-sizing: border-box;
 }
 
 
