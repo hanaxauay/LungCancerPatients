@@ -93,9 +93,9 @@
                     <p style="margin-top: 14px;">폐암 환우회 공지사항</p>
                     <div class="noticeboard" style="padding-left: 1%; padding-right: 1%;">
                         <table class="table">
-                            <tr th:each="notice : ${noticeList}">
-                                <td th:text="${notice.write_time}" style="text-align: center; padding-right: 5%;"></td>
-                                <td th:text="${notice.title}" style="text-align: center; padding-left: 5%;"></td>
+                            <tr th:each="notice, iterStat : ${noticeList}" th:if="${iterStat.index < 4}">
+                                <td th:text="${notice.write_time}" style="width:30%; height:50%;"></td>
+                                <td th:text="${notice.title}" style="width:70%; height: 50%; overflow: hidden;"></td>
                             </tr>
                         </table>
                     </div>
