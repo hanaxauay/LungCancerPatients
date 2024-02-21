@@ -8,6 +8,7 @@ class CancerPatientsApplicationTests {
 
 	@Test
 	void contextLoads() {
+		//test
 	}
 
 }
