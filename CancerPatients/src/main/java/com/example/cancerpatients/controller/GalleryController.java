@@ -38,16 +38,12 @@ public class GalleryController {
 ////        }
 //    }
 //
-//    @GetMapping("/gallery_detail_1")
-//    public String showGallery_Detail(Model model) {
-//
-//        return "gallery_detail_1";
-////        else {
-////            // 존재하지 않는 게시물에 대한 처리
-////            return "error";
-////        }
-//    }
-//
+    @GetMapping("/gallery_detail_1")
+    public String showGallery_Detail(Model model) {
+
+        return "gallery_detail_1";
+    }
+
     @GetMapping("/gallery_write")
     public String showWriteGalleryForm(Model model) {
 //        model.addAttribute("donationDto", new DonationDto());
