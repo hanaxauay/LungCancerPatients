@@ -4,6 +4,7 @@ import com.example.cancerpatients.dto.GalleryDto;
 import com.example.cancerpatients.entity.Gallery;
 import com.example.cancerpatients.repository.GalleryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -60,8 +61,8 @@ public class GalleryService {
 
 
     @Transactional
-    public List<GalleryDto> getGalleryList(){
-        List<Gallery> galleryList = galleryRepository.findAll();
+    public List<GalleryDto> getGalleryList(Sort sort){
+        List<Gallery> galleryList = galleryRepository.findAll(sort);
         List<GalleryDto> galleryDtoList = new ArrayList<>();
 
         for(Gallery gallery : galleryList) {

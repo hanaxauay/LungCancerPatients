@@ -3,6 +3,7 @@ package com.example.cancerpatients.controller;
 import com.example.cancerpatients.dto.GalleryDto;
 import com.example.cancerpatients.entity.Gallery;
 import com.example.cancerpatients.service.GalleryService;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,13 +21,14 @@ public class GalleryController {
     public GalleryController(GalleryService galleryService) {
         this.galleryService = galleryService;
     }
-
     @GetMapping("/gallery")
     public String gallery(Model model) {
-        List<GalleryDto> galleryList = galleryService.getGalleryList();
+        List<GalleryDto> galleryList = galleryService.getGalleryList(Sort.by(Sort.Direction.DESC, "seq"));
         model.addAttribute("galleryList", galleryList);
-        model.addAttribute("galleryTest", "Test");
-        System.out.println("galleryList: " + galleryList);
+        System.out.println("정렬된 갤러리 리스트 " + galleryList);
+        System.out.println("hihi");
+//        model.addAttribute("galleryTest", "Test");
+//        System.out.println("galleryList: " + galleryList);
 
         return "gallery";
     }
