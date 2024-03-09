@@ -79,12 +79,6 @@ public class HomeController {
     }
 
 
-    @GetMapping("/gallery")
-    public String goGallery(){
-        return "gallery";
-    }
-
-
 
 //    @GetMapping("/dbTest")
 ///   public List<DonationDto> dbTest() {

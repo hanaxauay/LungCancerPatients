@@ -31,6 +31,19 @@ public class NoticeController {
         return "notice";
     }
 
+
+    @GetMapping("/notice_write")
+    public String showNoticeGalleryForm(Model model) {
+        model.addAttribute("noticeDto", new NoticeDto());
+        return "notice_write";
+    }
+
+    @PostMapping("/notice_write")
+    public String writeNotice(@ModelAttribute NoticeDto noticeDto) {
+        noticeService.savePost(noticeDto);
+        return "redirect:/notice";
+    }
+
     @GetMapping("/notice_detail/{seq}")
     public String showNoticeDetail(@PathVariable Long seq, Model model) {
         Optional<Notice> optionalNotice = noticeService.getNoticeById(seq);
@@ -45,20 +58,6 @@ public class NoticeController {
 //            // 존재하지 않는 게시물에 대한 처리
 //            return "error";
 //        }
-    }
-
-
-
-    @GetMapping("/notice_write")
-    public String showWriteNoticeForm(Model model) {
-        model.addAttribute("noticeDto", new NoticeDto());
-        return "notice_write";
-    }
-
-    @PostMapping("/notice_write")
-    public String writeNotice(@ModelAttribute NoticeDto noticeDto) {
-        noticeService.savePost(noticeDto);
-        return "redirect:/notice";
     }
 
 

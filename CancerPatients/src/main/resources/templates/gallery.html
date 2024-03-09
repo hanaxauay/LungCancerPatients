@@ -90,17 +90,14 @@
                     </thead>
                     <tbody>
 
-                    <tr>
-                        <td >1</td> <!--글번호-->
-                        <!--
-                          <td href="@{'/detailDonation/' + ${donation.seq}}">
-                        -->
-                       <td>
-                            <a href="/gallery_detail_1">한국폐암환우회 창립(발기인)총회</a>
+                    <tr th:each="gallery : ${galleryList}">
+                        <td th:text="${gallery.seq}"></td>
+                        <td>
+                            <a th:href="@{'/gallery_detail/' + ${gallery.seq}}" th:text="${gallery.title}">게시물 보기</a>
 
                         </td>
-                        <td>폐암환우회</td>
-                        <td>2024-1-12</td>
+                        <td th:text="${gallery.author}"></td>
+                        <td th:text="${gallery.write_time}"></td>
                     </tr>
                     </tbody>
                 </table>
