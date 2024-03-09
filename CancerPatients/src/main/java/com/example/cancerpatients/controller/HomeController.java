@@ -5,6 +5,7 @@ import com.example.cancerpatients.dto.NoticeDto;
 import com.example.cancerpatients.service.DonationService;
 import com.example.cancerpatients.service.NoticeService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,12 +24,10 @@ public class HomeController {
     }
 
     @GetMapping("/")
-    public String home(Model model){
+    public String home(Model model, Sort sort){
 
-        List<NoticeDto> noticeList = noticeService.getNoticeList();
+        List<NoticeDto> noticeList = noticeService.getNoticeList(Sort.by(Sort.Direction.DESC, "seq"));
         model.addAttribute("noticeList", noticeList);
-        model.addAttribute("noticeTest", "Test");
-        System.out.println("noticeList: " + noticeList);
 
         return "index";
     }

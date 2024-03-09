@@ -4,6 +4,7 @@ import com.example.cancerpatients.dto.DonationDto;
 import com.example.cancerpatients.entity.Donation;
 import com.example.cancerpatients.repository.DonationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -59,20 +60,9 @@ public class DonationService {
         donationRepository.deleteById(id);
     }
 
-
-
-
-
-
-
-
-
-
-
-
     @Transactional
-    public List<DonationDto> getDonationList(){
-        List<Donation> donationList = donationRepository.findAll();
+    public List<DonationDto> getDonationList(Sort sort){
+        List<Donation> donationList = donationRepository.findAll(sort);
         List<DonationDto> donationDtoList = new ArrayList<>();
 
         for(Donation donation : donationList) {

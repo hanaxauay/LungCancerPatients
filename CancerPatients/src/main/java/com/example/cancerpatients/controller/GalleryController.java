@@ -25,10 +25,6 @@ public class GalleryController {
     public String gallery(Model model) {
         List<GalleryDto> galleryList = galleryService.getGalleryList(Sort.by(Sort.Direction.DESC, "seq"));
         model.addAttribute("galleryList", galleryList);
-        System.out.println("정렬된 갤러리 리스트 " + galleryList);
-        System.out.println("hihi");
-//        model.addAttribute("galleryTest", "Test");
-//        System.out.println("galleryList: " + galleryList);
 
         return "gallery";
     }

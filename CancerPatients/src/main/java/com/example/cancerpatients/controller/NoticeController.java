@@ -3,6 +3,7 @@ package com.example.cancerpatients.controller;
 import com.example.cancerpatients.dto.NoticeDto;
 import com.example.cancerpatients.entity.Notice;
 import com.example.cancerpatients.service.NoticeService;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,10 +24,8 @@ public class NoticeController {
 
     @GetMapping("/notice")
     public String notice(Model model) {
-        List<NoticeDto> noticeList = noticeService.getNoticeList();
+        List<NoticeDto> noticeList = noticeService.getNoticeList(Sort.by(Sort.Direction.DESC, "seq"));
         model.addAttribute("noticeList", noticeList);
-        model.addAttribute("noticeTest", "Test");
-        System.out.println("noticeList: " + noticeList);
 
         return "notice";
     }

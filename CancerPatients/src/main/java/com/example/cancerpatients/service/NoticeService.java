@@ -4,6 +4,7 @@ import com.example.cancerpatients.dto.NoticeDto;
 import com.example.cancerpatients.entity.Notice;
 import com.example.cancerpatients.repository.NoticeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -58,10 +59,9 @@ public class NoticeService {
         noticeRepository.deleteById(id);
     }
 
-
     @Transactional
-    public List<NoticeDto> getNoticeList(){
-        List<Notice> noticeList = noticeRepository.findAll();
+    public List<NoticeDto> getNoticeList(Sort sort){
+        List<Notice> noticeList = noticeRepository.findAll(sort);
         List<NoticeDto> noticeDtoList = new ArrayList<>();
 
         for(Notice notice : noticeList) {

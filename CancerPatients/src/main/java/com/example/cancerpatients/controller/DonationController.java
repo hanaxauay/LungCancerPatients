@@ -3,6 +3,7 @@ package com.example.cancerpatients.controller;
 import com.example.cancerpatients.dto.DonationDto;
 import com.example.cancerpatients.entity.Donation;
 import com.example.cancerpatients.service.DonationService;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,10 +24,8 @@ public class DonationController {
 
     @GetMapping("/donation")
     public String donation(Model model) {
-        List<DonationDto> donationList = donationService.getDonationList();
+        List<DonationDto> donationList = donationService.getDonationList(Sort.by(Sort.Direction.DESC, "seq"));
         model.addAttribute("donationList", donationList);
-        model.addAttribute("donationTest", "Test");
-        System.out.println("donationList: " + donationList);
 
         return "donation";
     }
