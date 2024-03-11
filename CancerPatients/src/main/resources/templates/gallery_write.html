@@ -1,3 +1,5 @@
+<!-- gallery_write.html-->
+
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -80,23 +82,29 @@
       <span class="big-navy">폐암환우회 활동 글쓰기<br/></span>
       </div>
       <div class="content">
-          <form action="gallery_write" method="post">
-            <div class="form-group">
-                <label>제목</label>
-                <input type="text" class="form-control" placeholder="Enter title" name="title">
-            </div>
+        <form action="gallery_write" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label>제목</label>
+            <input type="text" class="form-control" placeholder="Enter title" name="title">
+          </div>
 
-            <div class="form-group">
-              <label>글쓴이</label>
-              <input type="text" class="form-control" placeholder="관리자" name="author">
-            </div>
+          <div class="form-group">
+            <label>글쓴이</label>
+            <input type="text" class="form-control" placeholder="관리자" name="author">
+          </div>
 
-            <div class="form-group">
-              <label>내용</label>
-              <textarea class="form-control" rows="5" name="content" id="ckeditor"></textarea>
-            </div>
-            <input type="submit" id="btn-save" class="btn btn-primary">글 쓰기 완료</input>
-          </form>
+          <div class="form-group">
+            <label>내용</label>
+            <textarea class="form-control" rows="5" name="content" id="ckeditor"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="pdfFile">PDF 파일 업로드</label>
+            <input type="file" class="form-control-file" id="pdfFile" name="file">
+          </div>
+
+          <button type="submit" id="btn-save" class="btn btn-primary">글 쓰기 완료</button>
+        </form>
 
       </div>
     </div>

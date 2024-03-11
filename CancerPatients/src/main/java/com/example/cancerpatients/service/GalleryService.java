@@ -25,17 +25,19 @@ public class GalleryService {
 
     @Transactional
     public Long savePost(GalleryDto galleryDto) {
-       Gallery gallery = Gallery.builder()
+        Gallery gallery = Gallery.builder()
                 .title(galleryDto.getTitle())
                 .content(galleryDto.getContent())
                 .author(galleryDto.getAuthor())
                 .write_time(LocalDate.from(LocalDateTime.now())) // 현재 시간으로 설정
+                .filePath(galleryDto.getFilePath()) // 파일 경로 추가
+                .fileName(galleryDto.getFileName()) // 파일 이름 추가
                 .build();
 
         return galleryRepository.save(gallery).getSeq();
     }
 
- @Transactional
+    @Transactional
     public void updateGallery(Long id, GalleryDto galleryDto) {
         Optional<Gallery> optionalGallery = galleryRepository.findById(id);
 

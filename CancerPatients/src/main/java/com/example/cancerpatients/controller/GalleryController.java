@@ -6,11 +6,11 @@ import com.example.cancerpatients.service.GalleryService;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,9 +36,34 @@ public class GalleryController {
     }
 
     @PostMapping("/gallery_write")
-    public String writeGallery(@ModelAttribute GalleryDto galleryDto) {
-        galleryService.savePost(galleryDto);
-        return "redirect:/gallery";
+    public String writeGallery(@ModelAttribute GalleryDto galleryDto,
+                               @RequestParam("file") MultipartFile file) {
+        if (file.isEmpty()) {
+            // 파일이 업로드되지 않은 경우 처리
+            return "redirect:/gallery_write?error=file";
+        }
+
+        try {
+            // 파일 저장 경로 설정
+            String uploadDir = "uploads/";
+            String fileName = file.getOriginalFilename();
+            String filePath = uploadDir + fileName;
+            File dest = new File(filePath);
+            file.transferTo(dest);
+
+            // 파일 경로를 GalleryDto에 추가
+            galleryDto.setFilePath(filePath);
+            galleryDto.setFileName(fileName);
+
+            // GalleryDto를 서비스를 통해 저장
+            galleryService.savePost(galleryDto);
+
+            return "redirect:/gallery";
+        } catch (IOException e) {
+            e.printStackTrace();
+            // 파일 업로드 실패 시 처리
+            return "redirect:/gallery_write?error=upload";
+        }
     }
 
     @GetMapping("/gallery_detail/{seq}")

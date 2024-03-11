@@ -15,23 +15,29 @@ public class GalleryDto {
     private String content;
     private String author;
     private LocalDate write_time;
+    private String filePath; // 파일 경로 추가
+    private String fileName; // 파일 이름 추가
 
-    public Gallery toEntity(){
-        Gallery build = Gallery.builder()
+    public Gallery toEntity() {
+        return Gallery.builder()
                 .seq(seq)
                 .title(title)
+                .content(content)
                 .author(author)
                 .write_time(write_time)
+                .filePath(filePath)
+                .fileName(fileName)
                 .build();
-        return build;
     }
 
     @Builder
-    public GalleryDto(Long seq, String title, String content, String author, LocalDate write_time) {
+    public GalleryDto(Long seq, String title, String content, String author, LocalDate write_time, String filePath, String fileName) {
         this.seq = seq;
         this.title = title;
         this.content = content;
         this.author = author;
-        this.write_time=write_time;
+        this.write_time = write_time;
+        this.filePath = filePath;
+        this.fileName = fileName;
     }
 }

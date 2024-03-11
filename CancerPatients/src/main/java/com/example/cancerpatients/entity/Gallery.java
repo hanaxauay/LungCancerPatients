@@ -12,33 +12,40 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@EntityListeners(AuditingEntityListener.class) /*JPA에게 해당 entity는 auditiong기능을 사용함을 알린다*/
+@EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
 public class Gallery {
     @Id
-    @Column(name="SEQ",nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //기본 키 생성을 데이터베이스에 위임->즉, id 값을 null로 하면 DB가 알아서 AUTO_INCREMENT 해준다.
+    @Column(name="SEQ", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seq;
 
-    @Column(name="TITLE",nullable = false)
+    @Column(name="TITLE", nullable = false)
     private String title;
 
-    @Column(name="CONTENT",nullable = false)
+    @Column(name="CONTENT", nullable = false)
     private String content;
 
-    @Column(name="AUTHOR",nullable = false)
+    @Column(name="AUTHOR", nullable = false)
     private String author;
 
     @Column(name="WRITE_TIME")
     private LocalDate write_time;
 
+    @Column(name="FILE_PATH") // 파일 경로 필드 추가
+    private String filePath;
+
+    @Column(name="FILE_NAME") // 파일 이름 필드 추가
+    private String fileName;
 
     @Builder
-    public Gallery(Long seq, String title, String content, String author, LocalDate write_time) {
+    public Gallery(Long seq, String title, String content, String author, LocalDate write_time, String filePath, String fileName) {
         this.seq = seq;
         this.title = title;
         this.content = content;
         this.author = author;
         this.write_time = write_time;
+        this.filePath = filePath;
+        this.fileName = fileName;
     }
 }
