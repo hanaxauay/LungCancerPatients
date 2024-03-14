@@ -5,21 +5,16 @@
 
 }
 
-#all{
-    width:100%;
-    min-width: 1620px;
-}
+/*#all{*/
+/*    width:100%;*/
+/*    min-width: 1620px;*/
+/*}*/
 
 html,body{
     height:100%;
+    width:100%;
+    min-width: 1620px;
 }
-
-/*이거 안해도 차이가 없는데..?*/
-/*#all {*/
-/*    min-height: 100%;*/
-/*    position: relative;*/
-/*    padding-bottom: 60px;*/
-/*}*/
 
 .content_outer{
     margin-left: 2%;
