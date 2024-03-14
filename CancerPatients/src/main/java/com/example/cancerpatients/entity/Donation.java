@@ -23,9 +23,6 @@ public class Donation {
     @Column(name="CONTENT",nullable = false)
     private String content;
 
-    @Column(name="AUTHOR",nullable = false)
-    private String author;
-
     @Column(name="WRITE_TIME")
     private LocalDate write_time;
 
@@ -34,11 +31,10 @@ public class Donation {
 
 
     @Builder
-    public Donation(Long seq, String title, String content, String author, LocalDate write_time, int views) {
+    public Donation(Long seq, String title, String content, LocalDate write_time, int views) {
         this.seq = seq;
         this.title = title;
         this.content = content;
-        this.author = author;
         this.write_time = write_time;
         this.views = views;
     }

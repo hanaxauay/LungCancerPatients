@@ -15,7 +15,6 @@ public class DonationDto {
     private Long seq;
     private String title;
     private String content;
-    private String author;
     private LocalDate write_time;
     private int views;
 
@@ -23,7 +22,6 @@ public class DonationDto {
         Donation build = Donation.builder()
                 .seq(seq)
                 .title(title)
-                .author(author)
                 .write_time(write_time)
                 .views(views)
                 .build();
@@ -31,11 +29,10 @@ public class DonationDto {
     }
 
     @Builder
-    public DonationDto(Long seq, String title, String content, String author, LocalDate write_time, int views) {
+    public DonationDto(Long seq, String title, String content, LocalDate write_time, int views) {
         this.seq = seq;
         this.title = title;
         this.content = content;
-        this.author = author;
         this.write_time=write_time;
         this.views=views;
     }

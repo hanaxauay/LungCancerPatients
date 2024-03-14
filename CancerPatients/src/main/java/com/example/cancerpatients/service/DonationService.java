@@ -28,7 +28,6 @@ public class DonationService {
         Donation donation = Donation.builder()
                 .title(donationDto.getTitle())
                 .content(donationDto.getContent())
-                .author(donationDto.getAuthor())
                 .write_time(LocalDate.from(LocalDateTime.now())) // 현재 시간으로 설정
                 .views(0) // 초기 조회수 0으로 설정
                 .build();
@@ -45,10 +44,6 @@ public class DonationService {
 
             existingDonation.setTitle(donationDto.getTitle());
             existingDonation.setContent(donationDto.getContent());
-            existingDonation.setAuthor(donationDto.getAuthor());
-
-            // 기타 필요한 업데이트 작업 수행
-
             // 업데이트된 기부 내용을 저장
             donationRepository.save(existingDonation);
         } else {
@@ -70,7 +65,6 @@ public class DonationService {
                     .seq(donation.getSeq())
                     .title(donation.getTitle())
                     .content(donation.getContent())
-                    .author((donation.getAuthor()))
                     .write_time(donation.getWrite_time())
                     .views(donation.getViews())
                     .build();
