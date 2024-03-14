@@ -32,10 +32,6 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/organization")
-    public String goOrganization(){
-        return "organization";
-    }
     @GetMapping("/trace")
     public String goTrace(){
         return "trace";
