@@ -140,7 +140,12 @@ transform: translatY(-100%);
     min-width: 1620px;
 }
 
-a{
+.sub_menu a{
+    text-decoration: none;
+    color:#404040;
+}
+
+tbody a{
     text-decoration: none;
     color:#404040;
 }
@@ -148,6 +153,7 @@ a{
 li{
     list-style: none;
 }
+
 
 .sub_category {
     width: 100%;
@@ -279,7 +285,6 @@ li{
 
 #btn-save{
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 .form-control{
