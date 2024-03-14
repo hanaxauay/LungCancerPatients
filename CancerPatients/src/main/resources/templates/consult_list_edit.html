@@ -62,45 +62,42 @@
         </div>
     </div>
 </nav>
-<div class="middle">
-    <div class="sub_header">
-        <div class="sub_category">
-            <div class="sub_menu">
-                <a href="/donation_manage"><span class="sub_menu_text">후원금 운영</span></a>
-            </div>
+<div class="sub_header">
+    <div class="sub_category">
+        <div class="sub_menu">
+            <a href="/donation_manage"><span class="sub_menu_text">후원금 운영</span></a>
         </div>
-
     </div>
-    <div class="content">
-        <span class="big-green">새숨 전화 상담 목록<br/></span>
-        <p class="normal-charcoal">메모로 상담 여부를 관리할 수 있습니다.</p><br/><br/>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">글번호</th>
-                <th scope="col">제목</th>
-                <th scope="col">내용</th>
-                <th scope="col">상담 신청자</th>
-                <th scope="col">휴대폰 번호</th>
-                <th scope="col">메모</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="consult : ${consultList}">
-                <td th:text="${consult.seq}"></td>
-                <td th:text="${consult.title}"></td>
-                <td th:text="${consult.content}"></td>
-                <td th:text="${consult.author}"></td>
-                <td th:text="${consult.phone}"></td>
-                <form method="post" th:action="@{/consult_list_edit}">
-                    <input type="hidden" name="seq" th:value="${consult.seq}" />
-                    <textarea name="newMemo" th:text="${consult.memo}" rows="4" cols="50"></textarea>
-                    <button type="submit">메모 업데이트</button>
-                </form>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+</div>
+<div class="content">
+    <span class="big-green">새숨 전화 상담 목록<br/></span>
+    <p class="normal-charcoal">메모로 상담 여부를 관리할 수 있습니다.</p><br/><br/>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">글번호</th>
+            <th scope="col">제목</th>
+            <th scope="col">내용</th>
+            <th scope="col">상담 신청자</th>
+            <th scope="col">휴대폰 번호</th>
+            <th scope="col">메모</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="consult : ${consultList}">
+            <td th:text="${consult.seq}"></td>
+            <td th:text="${consult.title}"></td>
+            <td th:text="${consult.content}"></td>
+            <td th:text="${consult.author}"></td>
+            <td th:text="${consult.phone}"></td>
+            <form method="post" th:action="@{/consult_list_edit}">
+                <input type="hidden" name="seq" th:value="${consult.seq}" />
+                <textarea name="newMemo" th:text="${consult.memo}" rows="4" cols="50"></textarea>
+                <button type="submit">메모 업데이트</button>
+            </form>
+        </tr>
+        </tbody>
+    </table>
 </div>
 <footer>
     비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포뉴시티) | Tel : 010-4467-8275

@@ -62,30 +62,27 @@
     </div>
   </div>
 </nav>
-<div class="middle">
-  <div class="sub_header">
-    <div class="sub_category">
-      <div class="sub_menu">
-        <a href="/donation"><span class="sub_menu_text">후원금 운영</span></a>
-      </div>
+<div class="sub_header">
+  <div class="sub_category">
+    <div class="sub_menu">
+      <a href="/donation"><span class="sub_menu_text">후원금 운영</span></a>
     </div>
   </div>
-  <div style="margin-top:25px; text-align: center; font-size: 40px;">[후원금 운영] 글 작성 페이지</div>
-  <div class="content" style="margin:2%;">
-      <form action="donation_write" method="post">
-        <div class="form-group">
-            <label>제목</label>
-            <input type="text" class="form-control" name="title">
-        </div>
-        <br/>
-        <div class="form-group">
-          <label>내용</label>
-          <textarea class="form-control" rows="5" name="content" id="ckeditor"></textarea>
-        </div>
-        <input type="submit" id="btn-save" class="btn btn-primary"></input>
-      </form>
-  </div>
-
+</div>
+<div style="margin-top:25px; text-align: center; font-size: 40px;">[후원금 운영] 글 작성 페이지</div>
+<div class="content" style="margin:2%;">
+    <form action="donation_write" method="post">
+      <div class="form-group">
+          <label>제목</label>
+          <input type="text" class="form-control" name="title">
+      </div>
+      <br/>
+      <div class="form-group">
+        <label>내용</label>
+        <textarea class="form-control" rows="5" name="content" id="ckeditor"></textarea>
+      </div>
+      <input type="submit" id="btn-save" class="btn btn-primary"></input>
+    </form>
 </div>
 <script>
   var contextPath = '/donation_write'; // 여기에 애플리케이션의 실제 컨텍스트 경로를 직접 입력

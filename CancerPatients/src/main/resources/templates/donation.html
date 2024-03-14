@@ -58,39 +58,37 @@
         </div>
     </div>
 </nav>
-<div class="middle">
-    <div class="sub_header">
-        <div class="sub_category">
-            <div class="sub_menu">
-                <a href="/donation"><span class="sub_menu_text">후원금 운영</span></a>
-            </div>
+<div class="sub_header">
+    <div class="sub_category">
+        <div class="sub_menu">
+            <a href="/donation"><span class="sub_menu_text">후원금 운영</span></a>
         </div>
     </div>
-    <div class="content" style="margin-left:2%; margin-right:2%;">
-        <br/>
-        <div style="text-align: center; color:#626262;">후원금 운영 내역입니다</div>
+</div>
+<div class="content" style="margin-left:2%; margin-right:2%;">
+    <br/>
+    <div style="text-align: center; color:#626262;">후원금 운영 내역입니다</div>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">글번호</th>
-                    <th scope="col">제목</th>
-                    <th scope="col">작성일</th>
-                </tr>
-            </thead>
-            <tbody>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">글번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">작성일</th>
+            </tr>
+        </thead>
+        <tbody>
 
-                <tr th:each="donation : ${donationList}">
-                    <td th:text="${donation.seq}"></td>
-                    <td>
-                        <a th:href="@{'/donation_detail/' + ${donation.seq}}" th:text="${donation.title}">게시물 보기</a>
-                    </td>
-                    <td th:text="${donation.write_time}"></td>
-                </tr>
-            </tbody>
-        </table>
-        <input class="writeBtn" type="button" value="글쓰기" th:onclick="window.location.href='/donation_write'"/>
-    </div>
+            <tr th:each="donation : ${donationList}">
+                <td th:text="${donation.seq}"></td>
+                <td>
+                    <a th:href="@{'/donation_detail/' + ${donation.seq}}" th:text="${donation.title}">게시물 보기</a>
+                </td>
+                <td th:text="${donation.write_time}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <input class="writeBtn" type="button" value="글쓰기" th:onclick="window.location.href='/donation_write'"/>
 </div>
 <footer>
     비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포뉴시티) | Tel : 010-4467-8275
