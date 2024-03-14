@@ -84,7 +84,6 @@
                     <tr>
                         <th scope="col">글번호</th>
                         <th scope="col">제목</th>
-                        <th scope="col">글쓴이</th>
                         <th scope="col">작성 시간</th>
                     </tr>
                     </thead>
@@ -95,7 +94,6 @@
                         <td>
                             <a th:href="@{'/gallery_detail/' + ${gallery.seq}}" th:text="${gallery.title}">게시물 보기</a>
                         </td>
-                        <td th:text="${gallery.author}"></td>
                         <td th:text="${gallery.write_time}"></td>
                     </tr>
                     </tbody>
