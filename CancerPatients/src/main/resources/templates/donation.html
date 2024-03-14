@@ -66,32 +66,30 @@
             </div>
         </div>
     </div>
-    <div class="content_outer">
-        <div class="content" style="margin-left:2%; margin-right:2%;">
-            <br/>
-            <div style="text-align: center; color:#626262;">후원금 운영 내역입니다</div>
+    <div class="content" style="margin-left:2%; margin-right:2%;">
+        <br/>
+        <div style="text-align: center; color:#626262;">후원금 운영 내역입니다</div>
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">글번호</th>
-                        <th scope="col">제목</th>
-                        <th scope="col">작성일</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">글번호</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">작성일</th>
+                </tr>
+            </thead>
+            <tbody>
 
-                    <tr th:each="donation : ${donationList}">
-                        <td th:text="${donation.seq}"></td>
-                        <td>
-                            <a th:href="@{'/donation_detail/' + ${donation.seq}}" th:text="${donation.title}">게시물 보기</a>
-                        </td>
-                        <td th:text="${donation.write_time}"></td>
-                    </tr>
-                </tbody>
-            </table>
-            <input class="writeBtn" type="button" value="글쓰기" th:onclick="window.location.href='/donation_write'"/>
-        </div>
+                <tr th:each="donation : ${donationList}">
+                    <td th:text="${donation.seq}"></td>
+                    <td>
+                        <a th:href="@{'/donation_detail/' + ${donation.seq}}" th:text="${donation.title}">게시물 보기</a>
+                    </td>
+                    <td th:text="${donation.write_time}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="writeBtn" type="button" value="글쓰기" th:onclick="window.location.href='/donation_write'"/>
     </div>
 </div>
 <footer>

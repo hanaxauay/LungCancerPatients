@@ -74,30 +74,26 @@
     </div>
 
   </div>
-  <div class="content_outer">
-    <div style="margin-top:25px; text-align: center; font-size: 40px;">[폐암환우회 활동] 글 작성 페이지</div>
-    <div class="content">
-      <form action="gallery_write" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-          <label>제목</label>
-          <input type="text" class="form-control" name="title">
-        </div>
-        <br/>
-        <div class="form-group">
-          <label>내용</label>
-          <textarea class="form-control" rows="5" name="content" id="ckeditor"></textarea>
-        </div>
-        <div class="form-group">
-          <label for="pdfFile">PDF 파일 업로드</label>
-          <input type="file" class="form-control-file" id="pdfFile" name="file">
-        </div>
+  <div style="margin-top:25px; text-align: center; font-size: 40px;">[폐암환우회 활동] 글 작성 페이지</div>
+  <div class="content">
+    <form action="gallery_write" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label>제목</label>
+        <input type="text" class="form-control" name="title">
+      </div>
+      <br/>
+      <div class="form-group">
+        <label>내용</label>
+        <textarea class="form-control" rows="5" name="content" id="ckeditor"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="pdfFile">PDF 파일 업로드</label>
+        <input type="file" class="form-control-file" id="pdfFile" name="file">
+      </div>
 
-        <button type="submit" id="btn-save" class="btn btn-primary">글 작성</button>
-      </form>
-
-    </div>
+      <button type="submit" id="btn-save" class="btn btn-primary">글 작성</button>
+    </form>
   </div>
-
 </div>
 <script>
   var contextPath = '/gallery_write'; // 여기에 애플리케이션의 실제 컨텍스트 경로를 직접 입력

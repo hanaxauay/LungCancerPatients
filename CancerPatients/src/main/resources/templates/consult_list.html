@@ -127,48 +127,37 @@
         </div>
 
     </div>
-    <div class="content_outer">
-        <div class="content"  style="margin-top: 2%; margin-bottom: 2%;">
-            <span class="big-green">새숨 전화 상담 목록<br/></span>
-            <p class="normal-charcoal">메모로 상담 여부를 관리할 수 있습니다.</p><br/><br/>
-
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">번호</th>
-
-                    <th scope="col">이름</th>
-
-                    <th scope="col">번호</th>
-                    <th scope="col">제목</th>
-
-                    <th scope="col">내용</th>
-                    <th scope="col">메모</th>
-
-                </tr>
-                </thead>
-                <tbody>
-
-                <tr th:each="consult : ${consultList}">
-                    <td th:text="${consult.seq}" style="width: 50px;"></td>
-                    <td th:text="${consult.author}" style="width: 60px;"></td>
-                    <td th:text="${consult.phone}"  style="width: 100px;"></td>
-                    <td th:text="${consult.title}"  style="width: 200px;"></td>
-                    <td th:text="${consult.content}"></td>
-                    <td class="memo-cell" th:text="${consult.memo}"></td>
-                    <td><button class="consultBtn updateBtn" value="${consult.seq}" type="button">수정</button></td>
-
-                </tr>
-                </tbody>
-
-            </table>
-
+    <div class="content"  style="margin : 2%;">
+        <span class="big-green">새숨 전화 상담 목록<br/></span>
+        <p class="normal-charcoal">메모로 상담 여부를 관리할 수 있습니다.</p><br/><br/>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">번호</th>
+                <th scope="col">이름</th>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">내용</th>
+                <th scope="col">메모</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="consult : ${consultList}">
+                <td th:text="${consult.seq}" style="width: 50px;"></td>
+                <td th:text="${consult.author}" style="width: 60px;"></td>
+                <td th:text="${consult.phone}"  style="width: 100px;"></td>
+                <td th:text="${consult.title}"  style="width: 200px;"></td>
+                <td th:text="${consult.content}"></td>
+                <td class="memo-cell" th:text="${consult.memo}"></td>
+                <td><button class="consultBtn updateBtn" value="${consult.seq}" type="button">수정</button></td>
+            </tr>
+            </tbody>
+        </table>
 <!--                <div>-->
 <!--                    <button id="updateBtn" value="${consult.seq}" type="button" class="consultBtn">수정</button>-->
 <!--                </div>-->
-            <br/>
-        </div>
-</div>
+        <br/>
+    </div>
 </div>
 <footer>
     비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포뉴시티) | Tel : 010-4467-8275

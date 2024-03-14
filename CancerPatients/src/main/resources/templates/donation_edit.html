@@ -66,25 +66,23 @@
             </div>
         </div>
     </div>
-    <div class="content_outer">
-        <div class="content">
-            <!-- 수정 폼 -->
-            <form action="/donation_edit/{seq}" method="post" th:action="@{'/donation_edit/' + ${donation.seq}}">
-                <!-- 기부글의 내용을 Thymeleaf로 동적으로 바인딩합니다. -->
-                <input type="hidden" name="seq" th:value="${donation.seq}">
-                <div class="form-group">
-                    <label>제목</label>
-                    <input type="text" class="form-control" placeholder="Enter title" name="title" th:value="${donation.title}">
-                </div>
-                <div class="form-group">
-                    <label>내용</label>
-                    <textarea class="form-control" rows="5" name="content" th:text="${donation.content}"></textarea>
-                </div>
+    <div class="content">
+        <!-- 수정 폼 -->
+        <form action="/donation_edit/{seq}" method="post" th:action="@{'/donation_edit/' + ${donation.seq}}">
+            <!-- 기부글의 내용을 Thymeleaf로 동적으로 바인딩합니다. -->
+            <input type="hidden" name="seq" th:value="${donation.seq}">
+            <div class="form-group">
+                <label>제목</label>
+                <input type="text" class="form-control" placeholder="Enter title" name="title" th:value="${donation.title}">
+            </div>
+            <div class="form-group">
+                <label>내용</label>
+                <textarea class="form-control" rows="5" name="content" th:text="${donation.content}"></textarea>
+            </div>
 
-                <input type="submit" id="btn-save" class="writeBtn" value="수정 완료" style="margin-top: 14px;">
-                <br/><br/>
-            </form>
-        </div>
+            <input type="submit" id="btn-save" class="writeBtn" value="수정 완료" style="margin-top: 14px;">
+            <br/><br/>
+        </form>
     </div>
 </div>
 <footer>   비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포 뉴시티) | Tel : 010-4467-8275  </footer>

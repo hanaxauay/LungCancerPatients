@@ -66,78 +66,76 @@
 </nav>
 <div class="middle">
     <img src="../resources/images/indexx.png" class="index_img">
-    <div class="content_outer">
-        <div class="shortcut_outer">
-            <div class="shortcut_left" style="display: flex;
+    <div class="shortcut_outer">
+        <div class="shortcut_left" style="display: flex;
 justify-content: center; margin-top: 10px;">
-                <div class="shortcut_element">
-                    <a class="dropdown-item" href="https://cafe.naver.com/lungcancerpatient">
+            <div class="shortcut_element">
+                <a class="dropdown-item" href="https://cafe.naver.com/lungcancerpatient">
 
-                    <img src="../resources/images/cafe.png" class="shortcut_img">
-                    </a>
-                    <p>카페</p>
-                </div>
-                <div class="shortcut_element">
-                    <a class="dropdown-item" href="https://www.youtube.com/">
-                        <img src="../resources/images/youtube.png" class="shortcut_img"></a>
-                    <p>유튜브</p>
-                </div>
-                <div class="shortcut_element">
-                    <a class="dropdown-item" href="/consult">
-                        <img src="../resources/images/consult.png" class="shortcut_img"></a>
-                    <p>상담 신청</p>
-                </div>
+                <img src="../resources/images/cafe.png" class="shortcut_img">
+                </a>
+                <p>카페</p>
             </div>
-            <div class="shortcut_right">
-                <p style="margin-top: 14px;">폐암 환우회 공지사항</p>
-                <div class="noticeboard" style="padding-left: 1%; padding-right: 1%;">
-                    <table class="table">
-                        <tr th:each="notice, iterStat : ${noticeList}" th:if="${iterStat.index < 4}">
-                            <td th:text="${notice.write_time}" style="width:30%; height:50%;"></td>
-                            <td th:text="${notice.title}" style="width:70%; height: 50%; overflow: hidden;"></td>
-                        </tr>
-                    </table>
-                </div>
+            <div class="shortcut_element">
+                <a class="dropdown-item" href="https://www.youtube.com/">
+                    <img src="../resources/images/youtube.png" class="shortcut_img"></a>
+                <p>유튜브</p>
+            </div>
+            <div class="shortcut_element">
+                <a class="dropdown-item" href="/consult">
+                    <img src="../resources/images/consult.png" class="shortcut_img"></a>
+                <p>상담 신청</p>
             </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E; margin-right: 100px; margin-left: 100px; padding-top: 2px;"></h1>
-
-        <br/>
-        <div style="text-align: center;">
-        <h2 class="help" style="padding-left: 29px; color:#626262;" >함께 하는 기업</h2>
-            </div>
-        <div class="autoplay">
-            <div class="sponsor"><img src="../resources/images/sponsor/takeda.gif" /><!--Merk--></div>
-            <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--대한의사협회--></div>
-            <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 로슈--></div>
-            <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 얀센--></div>
-            <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
-            <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
-            <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
-        </div>
-        <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E; margin-right: 100px; margin-left: 100px;"></h1>
-        <div class="outer" style="padding-top:2%; display: flex; justify-content: center;">
-            <div class="bottom_info">
-                <img src="../resources/images/home.png" class="bottom_logo">
-                <p class="keyword">주소</p>
-                <p class="info">경기도 김포시 고촌읍 김포대로 340<br>1동 703호 (김포 뉴시티)</p>
-            </div>
-            <div class="bottom_info">
-                <img src="../resources/images/phone.png" class="bottom_logo">
-                <p class="keyword">전화</p>
-                <p class="info">대표 : 010-4467-8275</p>
-            </div>
-            <div class="bottom_info">
-                <img src="../resources/images/email.png" class="bottom_logo">
-                <p class="keyword">메일</p>
-                <p class="info">johnleee@naver.com</p>
+        <div class="shortcut_right">
+            <p style="margin-top: 14px;">폐암 환우회 공지사항</p>
+            <div class="noticeboard" style="padding-left: 1%; padding-right: 1%;">
+                <table class="table">
+                    <tr th:each="notice, iterStat : ${noticeList}" th:if="${iterStat.index < 4}">
+                        <td th:text="${notice.write_time}" style="width:30%; height:50%;"></td>
+                        <td th:text="${notice.title}" style="width:70%; height: 50%; overflow: hidden;"></td>
+                    </tr>
+                </table>
             </div>
         </div>
-        <br/>
     </div>
+    <br/>
+    <br/>
+    <br/>
+    <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E; margin-right: 100px; margin-left: 100px; padding-top: 2px;"></h1>
+
+    <br/>
+    <div style="text-align: center;">
+    <h2 class="help" style="padding-left: 29px; color:#626262;" >함께 하는 기업</h2>
+        </div>
+    <div class="autoplay">
+        <div class="sponsor"><img src="../resources/images/sponsor/takeda.gif" /><!--Merk--></div>
+        <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--대한의사협회--></div>
+        <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 로슈--></div>
+        <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 얀센--></div>
+        <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
+        <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
+        <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
+    </div>
+    <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E; margin-right: 100px; margin-left: 100px;"></h1>
+    <div class="outer" style="padding-top:2%; display: flex; justify-content: center;">
+        <div class="bottom_info">
+            <img src="../resources/images/home.png" class="bottom_logo">
+            <p class="keyword">주소</p>
+            <p class="info">경기도 김포시 고촌읍 김포대로 340<br>1동 703호 (김포 뉴시티)</p>
+        </div>
+        <div class="bottom_info">
+            <img src="../resources/images/phone.png" class="bottom_logo">
+            <p class="keyword">전화</p>
+            <p class="info">대표 : 010-4467-8275</p>
+        </div>
+        <div class="bottom_info">
+            <img src="../resources/images/email.png" class="bottom_logo">
+            <p class="keyword">메일</p>
+            <p class="info">johnleee@naver.com</p>
+        </div>
+    </div>
+    <br/>
 </div>
 <footer>
     비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포 뉴시티) | Tel : 010-4467-8275

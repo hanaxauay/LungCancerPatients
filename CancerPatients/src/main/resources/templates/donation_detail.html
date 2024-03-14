@@ -126,26 +126,24 @@
     </div>
 
   </div>
-  <div class="content_outer">
-    <div class="content">
-      <div th:each="donation : ${donation}">
-        <!-- 게시물 제목 -->
-        <h1 th:text="${donation.title}"></h1><br/>
-        <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E;"></h1>
+  <div class="content">
+    <div th:each="donation : ${donation}">
+      <!-- 게시물 제목 -->
+      <h1 th:text="${donation.title}"></h1><br/>
+      <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E;"></h1>
 
-        <!-- 게시물 작성자와 작성 시간 -->
-        <p style="float: right;">
-          <strong>작성 시간:</strong> <span th:text="${donation.write_time}"></span>
-        </p><br/><br/>
-        <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E;"></h1>
+      <!-- 게시물 작성자와 작성 시간 -->
+      <p style="float: right;">
+        <strong>작성 시간:</strong> <span th:text="${donation.write_time}"></span>
+      </p><br/><br/>
+      <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E;"></h1>
 
-        <!-- 게시물 내용 -->
-        <div th:utext="${donation.content}" style="text-align: center;"></div>
-      </div>
-      <a class="writeBtn" th:href="@{'/donation_edit/' + ${donation.seq}}" role="button">수정</a>
-      <a th:href="@{'/donation_delete/' + ${donation.seq}}" class="btn btn-danger">삭제</a>
-
+      <!-- 게시물 내용 -->
+      <div th:utext="${donation.content}" style="text-align: center;"></div>
     </div>
+    <a class="writeBtn" th:href="@{'/donation_edit/' + ${donation.seq}}" role="button">수정</a>
+    <a th:href="@{'/donation_delete/' + ${donation.seq}}" class="btn btn-danger">삭제</a>
+
   </div>
 </div>
 <footer>   비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포 뉴시티) | Tel : 010-4467-8275  </footer>
