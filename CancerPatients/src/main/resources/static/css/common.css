@@ -5,11 +5,6 @@
 
 }
 
-/*#all{*/
-/*    width:100%;*/
-/*    min-width: 1620px;*/
-/*}*/
-
 html,body{
     height:100%;
     width:100%;
@@ -216,7 +211,6 @@ li{
 .consultManageBtn:hover {
     background-color: #626262; /* 호버 시 배경색 변경 */
 }
-
 
 .writeBtn{
     display: inline-block;
