@@ -42,7 +42,6 @@ public class ConsultService {
         return consultDtoList;
     }
 
-
     public Consult updateMemo(Long seq, String newMemo) {
         Consult consult = consultRepository.findById(seq).orElse(null);
         if (consult != null) {

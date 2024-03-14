@@ -26,9 +26,6 @@ public class Gallery {
     @Column(name="CONTENT", nullable = false)
     private String content;
 
-    @Column(name="AUTHOR", nullable = false)
-    private String author;
-
     @Column(name="WRITE_TIME")
     private LocalDate write_time;
 
@@ -43,7 +40,6 @@ public class Gallery {
         this.seq = seq;
         this.title = title;
         this.content = content;
-        this.author = author;
         this.write_time = write_time;
         this.filePath = filePath;
         this.fileName = fileName;

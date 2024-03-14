@@ -26,19 +26,15 @@ public class Notice {
     @Column(name="CONTENT",nullable = false)
     private String content;
 
-    @Column(name="AUTHOR",nullable = false)
-    private String author;
-
     @Column(name="WRITE_TIME")
     private LocalDate write_time;
 
 
     @Builder
-    public Notice(Long seq, String title, String content, String author, LocalDate write_time) {
+    public Notice(Long seq, String title, String content, LocalDate write_time) {
         this.seq = seq;
         this.title = title;
         this.content = content;
-        this.author = author;
         this.write_time = write_time;
     }
 }

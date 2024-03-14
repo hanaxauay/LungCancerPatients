@@ -13,14 +13,12 @@ public class NoticeDto {
     private Long seq;
     private String title;
     private String content;
-    private String author;
     private LocalDate write_time;
 
     public Notice toEntity(){
         Notice build = Notice.builder()
                 .seq(seq)
                 .title(title)
-                .author(author)
                 .write_time(write_time)
                 .build();
         return build;
@@ -31,7 +29,6 @@ public class NoticeDto {
         this.seq = seq;
         this.title = title;
         this.content = content;
-        this.author = author;
         this.write_time=write_time;
     }
 }

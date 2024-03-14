@@ -28,7 +28,6 @@ public class NoticeService {
         Notice notice = Notice.builder()
                 .title(noticeDto.getTitle())
                 .content(noticeDto.getContent())
-                .author(noticeDto.getAuthor())
                 .write_time(LocalDate.from(LocalDateTime.now())) // 현재 시간으로 설정
                 .build();
 
@@ -44,11 +43,6 @@ public class NoticeService {
 
             existingNotice.setTitle(noticeDto.getTitle());
             existingNotice.setContent(noticeDto.getContent());
-            existingNotice.setAuthor(noticeDto.getAuthor());
-
-            // 기타 필요한 업데이트 작업 수행
-
-            // 업데이트된 기부 내용을 저장
             noticeRepository.save(existingNotice);
         } else {
             throw new RuntimeException("공지사항을 찾을 수 없습니다: " + id);
@@ -69,11 +63,9 @@ public class NoticeService {
                     .seq(notice.getSeq())
                     .title(notice.getTitle())
                     .content(notice.getContent())
-                    .author(notice.getAuthor())
                     .write_time(notice.getWrite_time())
                     .build();
             noticeDtoList.add(noticeDto);
-
         }
         return noticeDtoList;
     }

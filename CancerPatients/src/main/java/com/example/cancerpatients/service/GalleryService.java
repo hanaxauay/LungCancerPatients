@@ -28,7 +28,6 @@ public class GalleryService {
         Gallery gallery = Gallery.builder()
                 .title(galleryDto.getTitle())
                 .content(galleryDto.getContent())
-                .author(galleryDto.getAuthor())
                 .write_time(LocalDate.from(LocalDateTime.now())) // 현재 시간으로 설정
                 .filePath(galleryDto.getFilePath()) // 파일 경로 추가
                 .fileName(galleryDto.getFileName()) // 파일 이름 추가
@@ -46,11 +45,6 @@ public class GalleryService {
 
             existingGallery.setTitle(galleryDto.getTitle());
             existingGallery.setContent(galleryDto.getContent());
-            existingGallery.setAuthor(galleryDto.getAuthor());
-
-            // 기타 필요한 업데이트 작업 수행
-
-            // 업데이트된 기부 내용을 저장
             galleryRepository.save(existingGallery);
         } else {
             throw new RuntimeException("공지사항을 찾을 수 없습니다: " + id);
@@ -60,7 +54,6 @@ public class GalleryService {
     public void deleteGallery(Long id) {
         galleryRepository.deleteById(id);
     }
-
 
     @Transactional
     public List<GalleryDto> getGalleryList(Sort sort){
@@ -72,7 +65,6 @@ public class GalleryService {
                     .seq(gallery.getSeq())
                     .title(gallery.getTitle())
                     .content(gallery.getContent())
-                    .author(gallery.getAuthor())
                     .write_time(gallery.getWrite_time())
                     .build();
             galleryDtoList.add(galleryDto);

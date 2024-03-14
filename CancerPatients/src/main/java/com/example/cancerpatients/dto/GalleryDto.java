@@ -23,7 +23,6 @@ public class GalleryDto {
                 .seq(seq)
                 .title(title)
                 .content(content)
-                .author(author)
                 .write_time(write_time)
                 .filePath(filePath)
                 .fileName(fileName)
@@ -31,11 +30,10 @@ public class GalleryDto {
     }
 
     @Builder
-    public GalleryDto(Long seq, String title, String content, String author, LocalDate write_time, String filePath, String fileName) {
+    public GalleryDto(Long seq, String title, String content, LocalDate write_time, String filePath, String fileName) {
         this.seq = seq;
         this.title = title;
         this.content = content;
-        this.author = author;
         this.write_time = write_time;
         this.filePath = filePath;
         this.fileName = fileName;
