@@ -1,5 +1,5 @@
 .content {
-    margin: 3%;
+    margin: 2%;
     padding: 20px;
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
@@ -13,24 +13,17 @@
     text-align: center;
 }
 
-
 .content div {
     font-size: 16px;
 }
 
-.writeBtn {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-right: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
+.table td{
+    background-color: #f8f9fa;
 }
 
+.table th{
+    background-color: #f8f9fa;
+}
 .btn-danger {
     padding: 10px 20px;
     background-color: #dc3545;
