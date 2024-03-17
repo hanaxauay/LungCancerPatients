@@ -84,8 +84,8 @@ jobs:
 # blue-green 배포 방식 추가
       - name: Code Deploy
         run: |
-          cp ./docker-compose.blue.yml ./deploy/
-          cp ./docker-compose.green.yml ./deploy/
+          cp ./docker-compose-blue.yml ./deploy/
+          cp ./docker-compose-green.yml ./deploy/
           cp ./appspec.yml ./deploy/
           cp ./Dockerfile ./deploy/
           cp ./deploy.sh ./deploy/
