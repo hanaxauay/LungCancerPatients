@@ -55,7 +55,6 @@ jobs:
 # 수정
       - name: Make zip file
         run: |
-          mkdir deploy
           cp ./appspec.yml ./deploy/
           cp ./Dockerfile ./deploy/
           cp ./scripts/*.sh ./deploy/
