@@ -1,4 +1,4 @@
-name: Deploy to EC2
+name: Deploy to 
 
 on:
   push:
@@ -19,9 +19,27 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
-              
+
+      - name: Make application.properties
+        run: |
+          cd ./src/main
+          mkdir resources
+          cd ./resources/
+          touch ./application.properties
+          echo "${{ secrets.APPLICATION }}" > ./application.properties
+        shell: bash
+        
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: Build with Gradle
-        run: cd CancerPatients && ./gradlew build --no-daemon
+        run: ./gradlew build
+        
+      - name: Make zip file
+        run: |
+          mkdir deploy
+          cp ./build/libs/*.jar ./deploy/
+          zip -r -qq -j ./spring-build.zip ./deploy
         
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -31,5 +49,5 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Upload to AWS S3
-        run: aws s3 cp --recursive --region ap-northeast-2 CancerPatients/build/libs s3://lung-cancer-patients.com
+        run: aws s3 cp --region ap-northeast-2 ./spring-build.zip s3://lung-cancer-patients
 
