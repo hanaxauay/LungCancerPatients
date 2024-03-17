@@ -31,7 +31,11 @@ jobs:
           aws-region: ap-northeast-2
 
 
-      
+      - name: pwd
+        run: pwd
+
+      - name: ls-al 
+        run: ls -al
         
       - name: Upload to AWS S3
         run: aws s3 cp --recursive --region ap-northeast-2 /build s3://lung-cancer-patients.com
