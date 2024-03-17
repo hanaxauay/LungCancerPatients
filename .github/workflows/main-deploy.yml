@@ -52,3 +52,32 @@ jobs:
       - name: Upload to AWS S3
         run: aws s3 cp --region ap-northeast-2 ./spring-build.zip s3://lung-cancer-patients
 
+# 수정
+      - name: Make zip file
+        run: |
+          mkdir deploy
+          cp ./appspec.yml ./deploy/
+          cp ./Dockerfile ./deploy/
+          cp ./scripts/*.sh ./deploy/
+          cp ./build/libs/*.jar ./deploy/
+          zip -r -qq -j ./spring-build.zip ./deploy
+          
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+        
+      - name: Upload to S3
+        run: |
+          aws s3 cp \
+            --region ap-northeast-2 \
+            ./spring-build.zip s3://lung-cancer-patients-spring
+      
+	  # 추가
+      - name: Code Deploy
+        run: aws deploy create-deployment --application-name spring-deploy
+          --deployment-config-name CodeDeployDefault.OneAtATime
+          --deployment-group-name spring-deploy-group
+          --s3-location bucket=tcat-spring,bundleType=zip,key=spring-build.zip
