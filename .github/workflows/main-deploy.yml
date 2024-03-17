@@ -30,25 +30,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
 
-      - name: cd
-        run: cd /home/runner/
-      
-      - name: pwd
-        run: pwd
 
-      - name: ls
-        run: ls -al
-
-      - name: cd2
-        run: cd /CancerPatients
-
-      - name: pwd2
-        run: pwd
-
-      - name: ls2
-        run: ls -al
       
         
       - name: Upload to AWS S3
-        run: aws s3 cp --recursive --region ap-northeast-2 build s3://lung-cancer-patients.com
+        run: aws s3 cp --recursive --region ap-northeast-2 /build s3://lung-cancer-patients.com
 
