@@ -1,6 +1,6 @@
 FROM openjdk:11
 
-WORKDIR /lung
+WORKDIR /lung-cancer-patients
 
 COPY CancerPatients-0.0.1-SNAPSHOT.jar app.jar
 
