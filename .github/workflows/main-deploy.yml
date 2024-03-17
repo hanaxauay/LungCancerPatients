@@ -37,7 +37,7 @@ jobs:
         run: pwd
 
       - name: ls
-        run: ls
+        run: ls -al
 
       - name: cd2
         run: cd /CancerPatients
@@ -46,7 +46,7 @@ jobs:
         run: pwd
 
       - name: ls2
-        run: ls
+        run: ls -al
       
         
       - name: Upload to AWS S3
