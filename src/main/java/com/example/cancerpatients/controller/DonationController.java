@@ -46,6 +46,17 @@ public class DonationController {
 //        }
     }
 
+    @GetMapping("/donation_detail_1")
+    public String goGreeting22(){
+        return "donation_detail_1";
+    }
+
+
+    @GetMapping("/donation_detail_2")
+    public String goGr232eeting(){
+        return "donation_detail_2";
+    }
+
     @GetMapping("/donation_write")
     public String showWriteDonationForm(Model model) {
         model.addAttribute("donationDto", new DonationDto());

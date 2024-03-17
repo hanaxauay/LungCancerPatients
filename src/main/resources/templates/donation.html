@@ -81,12 +81,19 @@
         </thead>
         <tbody>
 
-            <tr th:each="donation : ${donationList}">
-                <td th:text="${donation.seq}"></td>
+            <tr>
+                <td text="1">1</td>
                 <td>
-                    <a th:href="@{'/donation_detail/' + ${donation.seq}}" th:text="${donation.title}">게시물 보기</a>
+                    <a href="/donation_detail_1" text="한국폐암환우회 2022년 재정보고">한국폐암환우회 2022년 재정보고</a>
                 </td>
-                <td th:text="${donation.write_time}"></td>
+                <td text="2024-03-15">2024-03-12</td>
+            </tr>
+            <tr>
+                <td text="1">2</td>
+                <td>
+                    <a href="/donation_detail_2" text="한국폐암환우회 2022년 재정보고">한국폐암환우회 2023년 재정보고</a>
+                </td>
+                <td text="2024-03-15">2024-03-15</td>
             </tr>
         </tbody>
     </table>
