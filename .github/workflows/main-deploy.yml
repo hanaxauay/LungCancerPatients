@@ -73,7 +73,21 @@ jobs:
       
 # 추가
       - name: Code Deploy
+      
         run: aws deploy create-deployment --application-name spring-deploy
           --deployment-config-name CodeDeployDefault.OneAtATime
           --deployment-group-name spring-deploy-group
           --s3-location bucket=tcat-spring,bundleType=zip,key=spring-build.zip
+
+# blue-green 배포 방식 추가
+
+      - name: Code Deploy
+        run: |
+          mkdir deploy
+          cp ./docker-compose.blue.yml ./deploy/
+          cp ./docker-compose.green.yml ./deploy/
+          cp ./appspec.yml ./deploy/
+          cp ./Dockerfile ./deploy/
+          cp ./deploy.sh ./deploy/
+          cp ./build/libs/*.jar ./deploy/
+          zip -r -qq -j ./spring-build.zip ./deploy
