@@ -78,9 +78,6 @@ jobs:
           --deployment-group-name spring-deploy-group
           --s3-location bucket=lung-cancer-patients,bundleType=zip,key=spring-build.zip
       
-      - name: hey here
-        run: pwd
-
       - name: hey here2
         run: ls -al
       
@@ -94,3 +91,7 @@ jobs:
           cp ./deploy.sh ./deploy/
           cp ./build/libs/*.jar ./deploy/
           zip -r -qq -j ./spring-build.zip ./deploy
+
+      - name: hey here3
+        run: cd deploy && ls -al 
+      
