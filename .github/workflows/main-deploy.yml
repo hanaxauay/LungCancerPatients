@@ -20,6 +20,9 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
 
+      - name: ls 
+        run: ls -al
+        
       - name: Make application.properties
         run: |
           cd ./src/main
