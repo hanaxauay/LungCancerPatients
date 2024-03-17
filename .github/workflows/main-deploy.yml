@@ -20,12 +20,15 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
 
-      - name: ls 
+      - name: cd
+        run: cd CancerPatients
+        
+      - name: ls
         run: ls -al
         
       - name: Make application.properties
         run: |
-          cd ./src/main
+          cd .CancerPatients/src/main
           mkdir resources
           cd ./resources/
           touch ./application.properties
