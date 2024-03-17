@@ -30,6 +30,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
 
+      - name: cd
+        run: cd /home/runner/work/LungCancerPatients/LungCancerPatients/client
+      
       - name: pwd
         run: pwd
 
