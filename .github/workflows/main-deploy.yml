@@ -21,7 +21,7 @@ jobs:
           java-version: '11'
               
       - name: Build with Gradle
-        run: ./gradlew build --no-daemon
+        run: cd CancerPatients && ./gradlew build --no-daemon
         
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
