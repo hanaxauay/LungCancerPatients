@@ -22,9 +22,7 @@ jobs:
 
       - name: Make application.properties
         run: |
-          cd ./CancerPatients/src/main
-          mkdir resources
-          cd ./resources/
+          cd ./CancerPatients/src/main/resources
           touch ./application.properties
           echo "${{ secrets.APPLICATION }}" > ./application.properties
         shell: bash
