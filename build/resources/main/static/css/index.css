@@ -11,9 +11,7 @@
     width: 30%;
     text-align: center;
     verflow: hidden; white-space: nowrap; text-overflow: ellipsis;
-
 }
-
 
 .bottom_info{
     width:25%;
@@ -82,15 +80,13 @@
 }
 
 .sponsor{
-    /*margin-top: 40px;*/
     text-align:center;
-    margin: 60px;
-    height: 90px;
+    margin-bottom : 30px;
 }
 
 .sponsor img{
-    width: 200px;
-    height: 50px;
+    width: 280px;
+    height: 80px;
     object-fit: cover;
     align-self: center;
     border:1px;

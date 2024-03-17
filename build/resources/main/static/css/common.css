@@ -5,25 +5,10 @@
 
 }
 
-#all{
-    width:100%;
-    min-width: 1620px;
-}
-
 html,body{
     height:100%;
-}
-
-/*이거 안해도 차이가 없는데..?*/
-/*#all {*/
-/*    min-height: 100%;*/
-/*    position: relative;*/
-/*    padding-bottom: 60px;*/
-/*}*/
-
-.content_outer{
-    margin-left: 2%;
-    margin-right:2%;
+    width:100%;
+    min-width: 1620px;
 }
 
 .help{
@@ -48,8 +33,6 @@ nav {
     list-style-type: none;
     /*overflow: hidden;*/
     white-space: nowrap;
-
-
 }
 
 .navbar-nav li{
@@ -152,7 +135,12 @@ transform: translatY(-100%);
     min-width: 1620px;
 }
 
-a{
+.sub_menu a{
+    text-decoration: none;
+    color:#404040;
+}
+
+tbody a{
     text-decoration: none;
     color:#404040;
 }
@@ -160,6 +148,7 @@ a{
 li{
     list-style: none;
 }
+
 
 .sub_category {
     width: 100%;
@@ -223,12 +212,11 @@ li{
     background-color: #626262; /* 호버 시 배경색 변경 */
 }
 
-
 .writeBtn{
     display: inline-block;
     padding: 10px 20px; /* 버튼 패딩 설정 */
     font-size: 16px; /* 버튼 텍스트 크기 */
-    background-color: #1089CF;; /* 배경색 설정 */
+    background-color: #007bff;
     color: #fff; /* 글꼴색 설정 */
     border: none; /* 테두리 없앰 */
     border-radius: 5px; /* 모서리 둥글게 */
@@ -289,4 +277,10 @@ li{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-/* ~ trace.html */
+#btn-save{
+    margin-top: 20px;
+}
+
+.form-control{
+    margin-top: 10px;
+}
