@@ -31,7 +31,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: cd
-        run: cd /home/runner/work/LungCancerPatients/LungCancerPatients/client
+        run: cd /home/runner/work/LungCancerPatients/LungCancerPatients
       
       - name: pwd
         run: pwd
