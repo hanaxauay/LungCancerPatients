@@ -19,27 +19,9 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
-
-      - name: pwd
-        run: pwd
-
-      - name: ls
-        run: ls -al
-
-      - name: cd CancerPatients
-        run: cd CancerPatients
-
-      - name: pwd
-        run: pwd
-        
+              
       - name: Build with Gradle
-        run: ./gradlew build --no-daemon
-
-      - name: pwd
-        run: pwd
-
-      - name: ls
-        run: ls -al
+        run: cd CancerPatients && ./gradlew build --no-daemon
         
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -48,10 +30,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-2
 
-  
-      - name: Verify build directory
-        run: ls -R ./build
-        
       - name: Upload to AWS S3
-        run: aws s3 cp --recursive --region ap-northeast-2 /build s3://lung-cancer-patients.com
+        run: aws s3 cp --recursive --region ap-northeast-2 build/libs s3://lung-cancer-patients.com
 
