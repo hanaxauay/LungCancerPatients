@@ -70,12 +70,9 @@ jobs:
           aws-region: ap-northeast-2
         
       - name: Upload to S3
-        run: |
-          aws s3 cp \
-            --region ap-northeast-2 \
-            ./spring-build.zip s3://lung-cancer-patients-spring
+        run: aws s3 cp --region ap-northeast-2 ./spring-build.zip s3://lung-cancer-patients-spring
       
-	  # 추가
+# 추가
       - name: Code Deploy
         run: aws deploy create-deployment --application-name spring-deploy
           --deployment-config-name CodeDeployDefault.OneAtATime
