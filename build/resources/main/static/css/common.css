@@ -1,0 +1,292 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+
+}
+
+#all{
+    width:100%;
+    min-width: 1620px;
+}
+
+html,body{
+    height:100%;
+}
+
+/*이거 안해도 차이가 없는데..?*/
+/*#all {*/
+/*    min-height: 100%;*/
+/*    position: relative;*/
+/*    padding-bottom: 60px;*/
+/*}*/
+
+.content_outer{
+    margin-left: 2%;
+    margin-right:2%;
+}
+
+.help{
+    font-size:30px;
+    font-weight: 400;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* 요소의 최소 너비 지정, height 속성 무시
+    vh: 브라우저 안쪽높이(window.innerHeight)을 기준으로 설정된다.
+    하지만 태블릿이나 모바일의 경우에는 뷰포트에 따라 맞춰짐*/
+    min-height: 10vh;
+    font-size: 1.485rem;
+}
+
+.navbar-nav{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    /*overflow: hidden;*/
+    white-space: nowrap;
+
+
+}
+
+.navbar-nav li{
+    list-style: none;
+}
+
+.navbar-nav a {
+    color:#626262;
+    text-decoration: none;
+}
+
+.navbar-nav li a{
+    color:#626262;
+    text-decoration: none;
+
+}
+
+.navbar-nav .nav-link:hover {
+    color: #1976D2; /* 원하는 색상으로 변경 */
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+/*
+드롭다운
+ */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: none;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px;
+    width:180px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    color: #333333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f2f2f2;
+}
+
+.liLogo{
+    width:15%;
+    margin:1%;
+    vertical-align: middle;
+}
+
+.imgLogo {
+    width: 300px;
+    height: 60px;
+}
+
+.tree_outer {
+   text-align: center;
+}
+.tree_img {
+    width: 1000px;
+}
+
+.trace_img {
+    text-align: center;
+}
+
+.trace__img {
+    width: 800px;
+
+}
+.sub_header{
+    width: 100%;
+    background-color: #BDCBDA;
+    justify-content: center;
+}
+
+footer{
+    position: relative; (absolute -> relative)
+transform: translatY(-100%);
+    /*위에 두개 없애도 되면 없애자*/
+
+    background-color: #626262;
+    height: 10%;
+    color:#fff;
+    display: flex; align-items: center; justify-content: center;
+    bottom: 0;
+    width:100%;
+    min-width: 1620px;
+}
+
+a{
+    text-decoration: none;
+    color:#404040;
+}
+
+li{
+    list-style: none;
+}
+
+.sub_category {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: hidden;
+}
+/*세부카테고리 요소 정렬*/
+.sub_menu {
+    float: left;
+    margin: 0 2.5%;
+    padding: 1%;
+}
+/*세부 카테고리 텍스트 설정*/
+.sub_menu_text {
+    text-align: center;
+    color: #505050;
+    font-size: 1.225rem;
+}
+.sub_menu :hover{
+    color: #000000;
+}
+
+.consultBtn{
+    display: inline-block;
+    padding: 10px 20px; /* 버튼 패딩 설정 */
+    font-size: 16px; /* 버튼 텍스트 크기 */
+    background-color: #00907B;; /* 배경색 설정 */
+    color: #fff; /* 글꼴색 설정 */
+    border: none; /* 테두리 없앰 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 버튼 호버 상태 스타일 */
+.consultBtn:hover {
+    background-color: #006C5D; /* 호버 시 배경색 변경 */
+}
+
+.consultManageBtn{
+    display: inline-block;
+    padding: 10px 20px; /* 버튼 패딩 설정 */
+    font-size: 16px; /* 버튼 텍스트 크기 */
+    background-color: #9E9E9E;; /* 배경색 설정 */
+    color: #fff; /* 글꼴색 설정 */
+    border: none; /* 테두리 없앰 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* 버튼 호버 상태 스타일 */
+.consultManageBtn:hover {
+    background-color: #626262; /* 호버 시 배경색 변경 */
+}
+
+
+.writeBtn{
+    display: inline-block;
+    padding: 10px 20px; /* 버튼 패딩 설정 */
+    font-size: 16px; /* 버튼 텍스트 크기 */
+    background-color: #1089CF;; /* 배경색 설정 */
+    color: #fff; /* 글꼴색 설정 */
+    border: none; /* 테두리 없앰 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: right;
+    margin-bottom: 15px;
+}
+
+/* 버튼 호버 상태 스타일 */
+.writeBtn:hover {
+    background-color: #015B8E; /* 호버 시 배경색 변경 */
+}
+/* 버튼 호버 상태 스타일 */
+.consultBtn:hover {
+    background-color: #006C5D; /* 호버 시 배경색 변경 */
+}
+
+/* trace.html */
+.big-green {
+    font-size: 54px;
+    font-weight: bolder;
+    color: #00907B;
+}
+
+.big-navy {
+    font-size: 40px;
+    font-weight: bolder;
+    color: #202349;
+}
+
+.normal-charcoal{
+    font-size: 20px;
+    color: #626262;
+
+}
+
+.big-charcoal{
+    font-size: 25px;
+    color: #626262;
+
+}
+
+.card {
+    background: #e2e1e0;
+    border-radius: 2px;
+    display: inline-block;
+    height: 800px;
+    padding:1rem;
+    margin-left: 7%;
+    position: relative;
+    width: 1400px;
+}
+
+.card-4 {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+/* ~ trace.html */

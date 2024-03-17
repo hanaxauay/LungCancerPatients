@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="../resources/css/common.css" rel="stylesheet"/>
+    <link href="../resources/css/index.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="../resources/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../resources/slick/slick-theme.css"/>
+    <title>한국 폐암환우회</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm" style="margin-top: 1%; margin-bottom: 1%;">
+    <div class="container-fluid">
+        <div class="logo-li"><a href="/"><img src="../resources/images/logo.png" class="imgLogo"></a></div>
+        <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">소개</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/greeting">인사말</a>
+                        <a class="dropdown-item" href="/trace">발자취</a>
+                        <a class="dropdown-item" href="/tree">조직도</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">사업 안내</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/breath_program">새숨 프로그램</a>
+                        <a class="dropdown-item" href="/breath_walk">새숨 걷기</a>
+                        <a class="dropdown-item" href="/activity">대외 활동</a>
+                        <a class="dropdown-item" href="/consult">새숨 전화 상담</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">암 치료정보</a>
+                    <div class="dropdown-menu">
+<!--                            <a class="dropdown-item" href="/lung">폐암이란</a>-->
+                        <a class="dropdown-item" href="/question">자주 묻는 질문</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">소식</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/notice">공지사항</a>
+                        <a class="dropdown-item" href="/gallery">폐암환우회 활동</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">후원</a>
+                    <div class="dropdown-menu">
+                        <!--                            <a class="dropdown-item" href="/donation">후원 신청</a>-->
+                        <a class="dropdown-item" href="/donation">후원금 운영</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<img src="../resources/images/indexx.png" class="index_img">
+<div class="shortcut_outer">
+    <div class="shortcut_left" style="display: flex;
+justify-content: center; margin-top: 10px;">
+        <div class="shortcut_element">
+            <a class="dropdown-item" href="https://cafe.naver.com/lungcancerpatient">
+
+            <img src="../resources/images/cafe.png" class="shortcut_img">
+            </a>
+            <p>카페</p>
+        </div>
+        <div class="shortcut_element">
+            <a class="dropdown-item" href="https://www.youtube.com/">
+                <img src="../resources/images/youtube.png" class="shortcut_img"></a>
+            <p>유튜브</p>
+        </div>
+        <div class="shortcut_element">
+            <a class="dropdown-item" href="/consult">
+                <img src="../resources/images/consult.png" class="shortcut_img"></a>
+            <p>상담 신청</p>
+        </div>
+    </div>
+    <div class="shortcut_right">
+        <p style="margin-top: 14px;">폐암 환우회 공지사항</p>
+        <div class="noticeboard" style="padding-left: 1%; padding-right: 1%;">
+            <table class="table">
+                <tr th:each="notice, iterStat : ${noticeList}" th:if="${iterStat.index < 4}">
+                    <td th:text="${notice.write_time}" style="width:30%; height:50%;"></td>
+                    <td th:text="${notice.title}" style="width:70%; height: 50%; overflow: hidden;"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<br/>
+<br/>
+<br/>
+<h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E; margin-right: 100px; margin-left: 100px; padding-top: 2px;"></h1>
+
+<br/>
+<div style="text-align: center;">
+<h2 class="help" style="padding-left: 29px; color:#626262; margin-bottom: 2%;" >함께 하는 기업</h2>
+    </div>
+<div class="autoplay">
+    <div class="sponsor"><a href="https://www.takeda.com/ko-kr"><img src="../resources/images/sponsor/takeda.svg" /></a></div>
+    <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--대한의사협회--></div>
+    <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 로슈--></div>
+    <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 얀센--></div>
+    <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
+    <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
+    <div class="sponsor"><img src="../resources/images/sponsor/imsi.png" /><!--한국 화이자--></div>
+</div>
+<h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E; margin-right: 100px; margin-left: 100px;"></h1>
+<div class="outer" style="padding-top:2%; display: flex; justify-content: center;">
+    <div class="bottom_info">
+        <img src="../resources/images/home.png" class="bottom_logo">
+        <p class="keyword">주소</p>
+        <p class="info">경기도 김포시 고촌읍 김포대로 340<br>1동 703호 (김포 뉴시티)</p>
+    </div>
+    <div class="bottom_info">
+        <img src="../resources/images/phone.png" class="bottom_logo">
+        <p class="keyword">전화</p>
+        <p class="info">대표 : 010-4467-8275</p>
+    </div>
+    <div class="bottom_info">
+        <img src="../resources/images/email.png" class="bottom_logo">
+        <p class="keyword">메일</p>
+        <p class="info">johnleee@naver.com</p>
+    </div>
+</div>
+<br/>
+<footer>
+    비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포 뉴시티) | Tel : 010-4467-8275
+</footer>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="../resources/slick/slick.min.js"></script>
+<script src="../resources/js/index.js"></script>
+</body>
+</html>

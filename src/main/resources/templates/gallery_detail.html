@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="../resources/css/common.css" rel="stylesheet" />
+  <link href="../resources/css/write.css" rel="stylesheet" />
+
+  <title>한국 폐암환우회</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm" style="margin-top: 1%; margin-bottom: 1%;">
+  <div class="container-fluid">
+    <div class="logo-li"><a href="/"><img src="../resources/images/logo.png" class="imgLogo"></a></div>
+
+    <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">소개</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/greeting">인사말</a>
+            <a class="dropdown-item" href="/trace">발자취</a>
+            <a class="dropdown-item" href="/tree">조직도</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">사업 안내</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/breath_program">새숨 프로그램</a>
+            <a class="dropdown-item" href="/breath_walk">새숨 걷기</a>
+            <a class="dropdown-item" href="/activity">대외 활동</a>
+            <a class="dropdown-item" href="/consult">새숨 전화 상담</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">암 치료정보</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/question">자주 묻는 질문</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">소식</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/notice">공지사항</a>
+            <a class="dropdown-item" href="/gallery">폐암환우회 활동</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">후원</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="/donation">후원금 운영</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="sub_header">
+  <div class="sub_category">
+    <div class="sub_menu">
+      <a href="/notice"><span class="sub_menu_text">공지사항</span></a>
+    </div>
+    <div class="sub_menu">
+      <a href="/gallery"><span class="sub_menu_text">폐암환우회 활동</span></a>
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="content">
+  <div th:each="gallery : ${gallery}">
+    <!-- 게시물 제목 -->
+    <h1 th:text="${gallery.title}"></h1><br/>
+
+    <!-- 게시물 작성자와 작성 시간 -->
+    <div style="float: right;">
+     작성일:<span th:text="${gallery.write_time}"></span>
+    </div><br/>
+    <h1 style="text-align: center; border-bottom:1px solid #727272; margin-top: 1%; margin-bottom:5%;"></h1>
+
+    <!-- 게시물 내용 -->
+    <div th:utext="${gallery.content}"></div>
+
+    <div th:if="${message}" th:text="${message}" style="color: red;"></div>
+
+    <!-- 업로드된 파일 정보 -->
+    <div th:if="${filePath}">
+      <h2>Uploaded File Information</h2>
+      <p>File Name: <span th:text="${fileName}"></span></p>
+      <p>File Path: <span th:text="${filePath}"></span></p>
+      <!-- 이 부분에서 파일을 다운로드할 수 있는 링크를 생성할 수 있습니다. -->
+
+    </div>
+    <h1 style="text-align: center; border-bottom:1px solid #727272; margin-top: 5%; margin-bottom:1%;"></h1>
+
+  </div>
+  <a class="writeBtn" th:href="@{'/gallery_edit/' + ${gallery.seq}}" role="button">수정</a>
+  <a th:href="@{'/gallery_delete/' + ${gallery.seq}}" class="btn btn-danger">삭제</a>
+</div>
+<footer>비영리법인 한국폐암환우회 | 고유번호 : 507- 82 -72452 | 주소 : 경기도 김포시 고촌읍 김포대로 340, 1동 703호 (김포뉴시티) | Tel : 010-4467-8275 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
