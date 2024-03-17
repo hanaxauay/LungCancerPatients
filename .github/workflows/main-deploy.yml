@@ -38,6 +38,16 @@ jobs:
 
       - name: ls
         run: ls
+
+      - name: cd2
+        run: cd /CancerPatients
+
+      - name: pwd2
+        run: pwd
+
+      - name: ls2
+        run: ls
+      
         
       - name: Upload to AWS S3
         run: aws s3 cp --recursive --region ap-northeast-2 build s3://lung-cancer-patients.com
