@@ -73,7 +73,6 @@ jobs:
       
 # 추가
       - name: Code Deploy
-      
         run: aws deploy create-deployment --application-name spring-deploy
           --deployment-config-name CodeDeployDefault.OneAtATime
           --deployment-group-name spring-deploy-group
@@ -83,7 +82,6 @@ jobs:
 
       - name: Code Deploy
         run: |
-          mkdir deploy
           cp ./docker-compose.blue.yml ./deploy/
           cp ./docker-compose.green.yml ./deploy/
           cp ./appspec.yml ./deploy/
