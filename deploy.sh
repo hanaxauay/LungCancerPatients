@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/ubuntu/app
+cd /home/ubuntu/build
 
 DOCKER_APP_NAME=spring
 
