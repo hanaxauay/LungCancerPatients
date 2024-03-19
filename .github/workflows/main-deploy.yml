@@ -1,4 +1,6 @@
-name: Deploy to 
+문제없이 잘 되는 원본
+
+name: Deploy to Ec2
 
 on:
   push:
@@ -35,4 +37,67 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build -x test
- 
+        
+
+      - name: 지우기
+        run: rm -rf ./deploy
+        
+      - name: Make zip file
+        run: |
+          mkdir deploy
+          cp ./build/libs/*.jar ./deploy/
+          zip -r -qq -j ./spring-build-0319.zip ./deploy
+        
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+
+      - name: Upload to AWS S3
+        run: aws s3 cp --region ap-northeast-2 ./spring-build-0319.zip s3://lung-cancer-patients
+
+# 수정
+      - name: Make zip file
+        run: |
+          cp ./appspec.yml ./deploy/
+          cp ./Dockerfile ./deploy/
+          cp ./deploy.sh ./deploy/
+          cp ./build/libs/*.jar ./deploy/
+          zip -r -qq -j ./spring-build-0319.zip ./deploy
+          
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+        
+      - name: Upload to S3
+        run: aws s3 cp --region ap-northeast-2 ./spring-build-0319.zip s3://lung-cancer-patients
+      
+# 추가
+      - name: Code Deploy
+        run: aws deploy create-deployment --application-name spring-deploy
+          --deployment-config-name CodeDeployDefault.OneAtATime
+          --deployment-group-name spring-deploy-group
+          --s3-location bucket=lung-cancer-patients,bundleType=zip,key=spring-build-0319.zip
+      
+      - name: hey here233
+        run: ls -al
+      
+# blue-green 배포 방식 추가
+      - name: Code Deploy
+        run: |
+          cp ./docker-compose-blue.yml ./deploy/
+          cp ./docker-compose-green.yml ./deploy/
+          cp ./appspec.yml ./deploy/
+          cp ./Dockerfile ./deploy/
+          cp ./deploy.sh ./deploy/
+          cp ./build/libs/*.jar ./deploy/
+          zip -r -qq -j ./spring-build-0319.zip ./deploy
+
+      - name: hey here3
+        run: cd deploy && ls -al 
+      
