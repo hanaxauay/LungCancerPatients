@@ -96,7 +96,3 @@ jobs:
           cp ./deploy.sh ./deploy/
           cp ./build/libs/*.jar ./deploy/
           zip -r -qq -j ./ec2-deploy.zip ./deploy
-
-      - name: hey here3
-        run: cd deploy && ls -al 
-      
