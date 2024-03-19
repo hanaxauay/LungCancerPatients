@@ -92,7 +92,8 @@ justify-content: center; margin-top: 10px;">
             <table class="table">
                 <tr th:each="notice, iterStat : ${noticeList}" th:if="${iterStat.index < 4}">
                     <td th:text="${notice.write_time}" style="width:30%; height:50%;"></td>
-                    <td th:text="${notice.title}" style="width:70%; height: 50%; overflow: hidden;"></td>
+                    <td style="width:70%; height: 50%; overflow: hidden;"> <a th:href="@{'/notice_detail/' + ${notice.seq}}" th:text="${notice.title}"></a>
+                </td>
                 </tr>
             </table>
         </div>
@@ -102,17 +103,28 @@ justify-content: center; margin-top: 10px;">
 <br/>
 <br/>
 <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E; margin-right: 100px; margin-left: 100px; padding-top: 2px;"></h1>
-
 <br/>
 <div style="text-align: center;">
-<h2 class="help" style="padding-left: 29px; color:#626262; margin-bottom: 2%;" >함께 하는 기업</h2>
-    </div>
-<div class="autoplay">
-    <div class="sponsor"><a href="https://www.takeda.com/ko-kr"><img src="../resources/images/sponsor/takeda.svg" /></a></div>
-    <div class="sponsor"><a href="https://laakorea.co.kr"><img src="../resources/images/sponsor/lltq.png" /></a></div>
+    <h2 class="help" style="padding-left: 29px; color:#626262; margin-bottom: 2%;" >함께 하는 기업</h2>
 </div>
+<div class="autoplay">
+    <div class="sponsor_company"><a href="https://www.takeda.com/ko-kr"><img src="../resources/images/sponsor/takeda.svg" /></a></div>
+    <div class="sponsor_company"><a href="https://laakorea.co.kr"><img src="../resources/images/sponsor/lltq.png" style="width: 360px;" /></a></div>
+</div>
+<h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E; margin-right: 100px; margin-left: 100px; padding-top: 2px;"></h1><br/>
+<div style="text-align: center;">
+    <h2 class="help" style="padding-left: 29px; color:#626262; margin-bottom: 2%;" >후원자님들</h2>
+</div>
+
+<div class="autoplay_sponsor" style="display: flex; justify-content : center;">
+        <div class="sponsor">김*자</div><div class="sponsor">김*식</div><div class="sponsor">김*주</div><div class="sponsor">박*동</div><div class="sponsor">송*규</div><div class="sponsor">윤*만</div><div class="sponsor">윤*식</div><div class="sponsor">이*배</div>
+        <div class="sponsor">이*정</div><div class="sponsor">이*주</div><div class="sponsor">이*진</div><div class="sponsor">임*석</div><div class="sponsor">장*숙</div><div class="sponsor">정*욱</div><div class="sponsor">정*훈</div><div class="sponsor">정*혜</div><div class="sponsor">조*일</div><div class="sponsor">홍*술</div><div class="sponsor">황*희</div>
+</div>
+
+
 <h1 style="font-size: 45px; text-align: center; border-bottom:1px solid #9E9E9E; margin-right: 100px; margin-left: 100px;"></h1>
-<div class="outer" style="padding-top:2%; display: flex; justify-content: center;">
+
+<div class="outer" style="padding-top:2%; display: flex; justify-content: center; ">
     <div class="bottom_info">
         <img src="../resources/images/home.png" class="bottom_logo">
         <p class="keyword">주소</p>

@@ -79,16 +79,23 @@
     margin-left: 30px;
 }
 
-.sponsor{
+.sponsor_company{
     text-align:center;
     margin-bottom : 30px;
 }
-
-.sponsor img{
+.sponsor_company img{
     width: 280px;
     height: 80px;
     object-fit: cover;
     align-self: center;
     border:1px;
+}
 
+.autoplay_sponsor {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.autoplay_sponsor div {
+    margin-bottom: 10px;
+    width: 1400px;
 }

@@ -88,7 +88,7 @@
         <tr th:each="notice : ${noticeList}">
             <td th:text="${notice.seq}"></td>
             <td>
-                <a th:href="@{'/notice_detail/' + ${notice.seq}}" th:text="${notice.title}">게시물 보기</a>
+                <a th:href="@{'/notice_detail/' + ${notice.seq}}" th:text="${notice.title}"></a>
 
             </td>
             <td th:text="${notice.write_time}"></td>
