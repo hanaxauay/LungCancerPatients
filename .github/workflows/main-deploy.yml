@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout source code.
-        uses: actions/checkout@master
+      - name: Checkout source code
+        uses: actions/checkout@v2
         
       - name: Set up JDK
         uses: actions/setup-java@v2
@@ -25,8 +25,6 @@ jobs:
           cd ./src/main/resources
           touch ./application.properties
           echo "${{ secrets.APPLICATION }}" > ./application.properties
-
-      
           
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -38,6 +36,11 @@ jobs:
         run: |
           mkdir deploy
           cp ./build/libs/*.jar ./deploy/
+          cp ./docker-compose-blue.yml ./deploy/
+          cp ./docker-compose-green.yml ./deploy/
+          cp ./appspec.yml ./deploy/
+          cp ./Dockerfile ./deploy/
+          cp ./deploy.sh ./deploy/
           zip -r -qq -j ./s3-folder.zip ./deploy
           
       - name: Configure AWS credentials
@@ -50,23 +53,8 @@ jobs:
       - name: Upload to S3
         run: aws s3 cp --region ap-northeast-2 ./s3-folder.zip s3://lung-cancer-patients
       
-# 추가
       - name: Code Deploy
-        run: aws deploy create-deployment --application-name spring-deploy
-          --deployment-config-name CodeDeployDefault.OneAtATime
-          --deployment-group-name spring-deploy-group
-          --s3-location bucket=lung-cancer-patients,bundleType=zip,key=s3-folder.zip
+        run: aws deploy create-deployment --application-name spring-deploy --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name spring-deploy-group --s3-location bucket=lung-cancer-patients,bundleType=zip,key=s3-folder.zip
       
-      - name: hey here233
+      - name: List files
         run: ls -al
-      
-# blue-green 배포 방식 추가
-      - name: Code Deploy
-        run: |
-          cp ./docker-compose-blue.yml ./deploy/
-          cp ./docker-compose-green.yml ./deploy/
-          cp ./appspec.yml ./deploy/
-          cp ./Dockerfile ./deploy/
-          cp ./deploy.sh ./deploy/
-          cp ./build/libs/*.jar ./deploy/
-          zip -r -qq -j ./s3-folder.zip ./deploy
