@@ -78,7 +78,7 @@ jobs:
           --deployment-group-name spring-deploy-group
           --s3-location bucket=lung-cancer-patients,bundleType=zip,key=spring-build.zip
       
-      - name: hey here2
+      - name: hey here23
         run: ls -al
       
 # blue-green 배포 방식 추가
