@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/ubuntu/build
+cd /home/ubuntu/ec2deploy
 
 DOCKER_APP_NAME=spring
 
