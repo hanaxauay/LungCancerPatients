@@ -25,7 +25,7 @@ public class NoticeDto {
     }
 
     @Builder
-    public NoticeDto(Long seq, String title, String content, String author, LocalDate write_time) {
+    public NoticeDto(Long seq, String title, String content, LocalDate write_time) {
         this.seq = seq;
         this.title = title;
         this.content = content;
