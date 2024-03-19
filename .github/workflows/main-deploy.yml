@@ -44,7 +44,7 @@ jobs:
         run: |
           mkdir deploy
           cp ./build/libs/*.jar ./deploy/
-          zip -r -qq -j ./spring-build-0319.zip ./deploy
+          zip -r -qq -j ./ec2-deploy.zip ./deploy
         
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -54,7 +54,7 @@ jobs:
           aws-region: ap-northeast-2
 
       - name: Upload to AWS S3
-        run: aws s3 cp --region ap-northeast-2 ./spring-build-0319.zip s3://lung-cancer-patients
+        run: aws s3 cp --region ap-northeast-2 ./ec2-deploy.zip s3://lung-cancer-patients
 
 # 수정
       - name: Make zip file
@@ -63,7 +63,7 @@ jobs:
           cp ./Dockerfile ./deploy/
           cp ./deploy.sh ./deploy/
           cp ./build/libs/*.jar ./deploy/
-          zip -r -qq -j ./spring-build-0319.zip ./deploy
+          zip -r -qq -j ./ec2-deploy.zip ./deploy
           
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -73,14 +73,14 @@ jobs:
           aws-region: ap-northeast-2
         
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 ./spring-build-0319.zip s3://lung-cancer-patients
+        run: aws s3 cp --region ap-northeast-2 ./ec2-deploy.zip s3://lung-cancer-patients
       
 # 추가
       - name: Code Deploy
         run: aws deploy create-deployment --application-name spring-deploy
           --deployment-config-name CodeDeployDefault.OneAtATime
           --deployment-group-name spring-deploy-group
-          --s3-location bucket=lung-cancer-patients,bundleType=zip,key=spring-build-0319.zip
+          --s3-location bucket=lung-cancer-patients,bundleType=zip,key=ec2-deploy.zip
       
       - name: hey here233
         run: ls -al
@@ -94,7 +94,7 @@ jobs:
           cp ./Dockerfile ./deploy/
           cp ./deploy.sh ./deploy/
           cp ./build/libs/*.jar ./deploy/
-          zip -r -qq -j ./spring-build-0319.zip ./deploy
+          zip -r -qq -j ./ec2-deploy.zip ./deploy
 
       - name: hey here3
         run: cd deploy && ls -al 
