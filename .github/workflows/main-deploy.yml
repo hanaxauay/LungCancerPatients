@@ -25,45 +25,18 @@ jobs:
           cd ./src/main/resources
           touch ./application.properties
           echo "${{ secrets.APPLICATION }}" > ./application.properties
-        shell: bash
-
-      - name: ls
-        run: ls -al
-
+          
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
       - name: Build with Gradle
         run: ./gradlew build -x test
         
-
-      - name: 지우기
-        run: rm -rf ./deploy
-        
       - name: Make zip file
         run: |
           mkdir deploy
           cp ./build/libs/*.jar ./deploy/
-          zip -r -qq -j ./ec2-deploy.zip ./deploy
-        
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-northeast-2
-
-      - name: Upload to AWS S3
-        run: aws s3 cp --region ap-northeast-2 ./ec2-deploy.zip s3://lung-cancer-patients
-
-# 수정
-      - name: Make zip file
-        run: |
-          cp ./appspec.yml ./deploy/
-          cp ./Dockerfile ./deploy/
-          cp ./deploy.sh ./deploy/
-          cp ./build/libs/*.jar ./deploy/
-          zip -r -qq -j ./ec2-deploy.zip ./deploy
+          zip -r -qq -j ./s3-folder.zip ./deploy
           
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -73,20 +46,19 @@ jobs:
           aws-region: ap-northeast-2
         
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 ./ec2-deploy.zip s3://lung-cancer-patients
+        run: aws s3 cp --region ap-northeast-2 ./s3-folder.zip s3://lung-cancer-patients
       
 # 추가
       - name: Code Deploy
         run: aws deploy create-deployment --application-name spring-deploy
           --deployment-config-name CodeDeployDefault.OneAtATime
           --deployment-group-name spring-deploy-group
-          --s3-location bucket=lung-cancer-patients,bundleType=zip,key=ec2-deploy.zip
+          --s3-location bucket=lung-cancer-patients,bundleType=zip,key=s3-folder.zip
       
       - name: hey here233
         run: ls -al
       
 # blue-green 배포 방식 추가
-
       - name: Code Deploy
         run: |
           cp ./docker-compose-blue.yml ./deploy/
@@ -95,4 +67,4 @@ jobs:
           cp ./Dockerfile ./deploy/
           cp ./deploy.sh ./deploy/
           cp ./build/libs/*.jar ./deploy/
-          zip -r -qq -j ./ec2-deploy.zip ./deploy
+          zip -r -qq -j ./s3-folder.zip ./deploy
