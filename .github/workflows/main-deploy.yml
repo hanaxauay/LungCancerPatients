@@ -1,5 +1,3 @@
-문제없이 잘 되는 원본
-
 name: Deploy to Ec2
 
 on:
